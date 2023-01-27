@@ -1,6 +1,8 @@
 import React from "react";
 import { motion, useScroll } from "framer-motion";
 import { Modal } from "@mui/material";
+import CommunityTest from "./CommunityTest";
+import About from "./About";
 
 const Home = () => {
   const [open, setOpen] = React.useState(false);
@@ -273,6 +275,12 @@ const Home = () => {
             alt=""
           />
         </div>
+      </div>
+      <div>
+        <CommunityTest />
+      </div>
+      <div>
+        <About />
       </div>
     </div>
   );
