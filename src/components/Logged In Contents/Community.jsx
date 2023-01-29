@@ -2,11 +2,12 @@ import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import { useRef } from "react";
-import { usernameContext, passwordContext } from "../../../App";
+// import { usernameContext, passwordContext } from "../../../App";
 
 const Community = () => {
   //   const [array, setArray] = useState([{ username: "Krish", message: "Hi" }]);
-  const { username, setusername } = useContext(usernameContext);
+  // const { username, setusername } = useContext(usernameContext);
+  const [username, setusername] = useState();
   const [message, setmessage] = useState();
   const [groupname, setgroupname] = useState("Group1");
   const [array, setArray] = useState([
@@ -32,11 +33,11 @@ const Community = () => {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/community?chat=${groupname}`)
-      .then(function(response) {
+      .then(function (response) {
         setArray(response.data);
         console.log(response.data);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }, []);
@@ -45,15 +46,14 @@ const Community = () => {
     setTimeout(() => {
       axios
         .get(`http://localhost:5000/community?chat=${groupname}`)
-        .then(function(response) {
-          alert('done')
+        .then(function (response) {
+          alert("done");
           setArray(response.data);
           console.log(response.data);
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.log(error);
         });
-      
     }, 4000);
   });
 
