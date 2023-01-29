@@ -3,6 +3,8 @@ import { motion, useScroll } from "framer-motion";
 import { Modal } from "@mui/material";
 import CommunityTest from "./CommunityTest";
 import About from "./About";
+import ChatBot from "./ChatBot";
+import AnimationTest from "./AnimationTest";
 
 const Home = () => {
   const [open, setOpen] = React.useState(false);
@@ -281,6 +283,12 @@ const Home = () => {
       </div>
       <div>
         <About />
+      </div>
+      <div>
+        <ChatBot />
+      </div>
+      <div>
+        <AnimationTest />
       </div>
     </div>
   );
