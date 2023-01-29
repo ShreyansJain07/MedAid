@@ -5,6 +5,7 @@ import CommunityTest from "./CommunityTest";
 import About from "./About";
 import ChatBot from "./ChatBot";
 import AnimationTest from "./AnimationTest";
+import Community from "./Community";
 
 const Home = () => {
   const [open, setOpen] = React.useState(false);
@@ -280,6 +281,9 @@ const Home = () => {
       </div>
       <div>
         <CommunityTest />
+      </div>
+      <div>
+        <Community />
       </div>
       <div>
         <About />
