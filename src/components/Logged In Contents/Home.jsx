@@ -1,6 +1,12 @@
 import React from "react";
 import { motion, useScroll } from "framer-motion";
 import { Modal } from "@mui/material";
+import CommunityTest from "./CommunityTest";
+import About from "./About";
+import ChatBot from "./ChatBot";
+import AnimationTest from "./AnimationTest";
+import Community from "./Community";
+import Community2 from "./Community2";
 
 const Home = () => {
   const [open, setOpen] = React.useState(false);
@@ -16,6 +22,9 @@ const Home = () => {
 
   return (
     <div>
+      <div>
+        <Community2/>
+      </div>
       <motion.div
         className="progress-bar sticky z-30 top-0 left-0 right-0 h-[10px] origin-left bg-red-600"
         style={{ scaleX: scrollYProgress }}
@@ -273,6 +282,21 @@ const Home = () => {
             alt=""
           />
         </div>
+      </div>
+      <div>
+        <CommunityTest />
+      </div>
+      <div>
+        <Community />
+      </div>
+      <div>
+        <About />
+      </div>
+      <div>
+        <ChatBot />
+      </div>
+      <div>
+        <AnimationTest />
       </div>
     </div>
   );

@@ -15,8 +15,8 @@ const LoginForm = () => {
   const { password, setPassword } = useContext(passwordContext);
 
   // User sign in
-  const [signin, setsignin] = useState(false);
-  const [alertstate, setalertstate] = useState(false);
+  // const [signin, setsignin] = useState(false);
+  // const [alertstate, setalertstate] = useState(false);
   const [userEmail, setuserEmail] = useState();
   //   const [username, setusername] = useState();
 
@@ -46,7 +46,7 @@ const LoginForm = () => {
   const passwordref = useRef();
 
   // Login state, false means login page is active
-  const [loginState, setLoginState] = useState(false);
+  // const [loginState, setLoginState] = useState(false);
   const [err, seterr] = useState();
 
   useEffect(() => {
