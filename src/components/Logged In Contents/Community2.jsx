@@ -1,5 +1,5 @@
 import io from "socket.io-client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Chat from "./Chat";
 
 const socket = io.connect("http://localhost:3001");
@@ -15,6 +15,7 @@ function Community2() {
       setShowChat(true);
     }
   };
+useEffect(joinRoom, [room]);
 
   return (
     <div className="App">
@@ -28,14 +29,19 @@ function Community2() {
               setUsername(event.target.value);
             }}
           />
-          <input
+          {/* <input
             type="text"
             placeholder="Room ID..."
             onChange={(event) => {
               setRoom(event.target.value);
             }}
-          />
-          <button onClick={joinRoom}>Join A Room</button>
+          /> */}
+          {/* <button onClick={joinRoom}>Join A Room</button> */}
+          <div>
+            <button onClick={()=> setRoom("1")}>Join room 1</button>
+            <button onClick={()=> setRoom("2")}>Join room 2</button>
+            <button onClick={()=> setRoom("3")}>Join room 3</button>
+          </div>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />

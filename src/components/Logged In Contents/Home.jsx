@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, useScroll } from "framer-motion";
 import { Modal } from "@mui/material";
-import CommunityTest from "./CommunityTest";
 import About from "./About";
 import ChatBot from "./ChatBot";
 import AnimationTest from "./AnimationTest";
@@ -81,10 +80,6 @@ const Home = () => {
         </Modal>
       </div>
       {/* // Modal end */}
-      <div className="min-h-screen">
-        <div className="md:w-2/5">Stages of The User Journey</div>
-        <img className="md:w-3/5" src="" alt="" />
-      </div>
       <div className="bg-black text-white text-left md:pl-10 md:pt-16 md:pb-24 md:pr-9">
         <motion.div
           initial={{ x: "-100%", opacity: 0 }}
@@ -282,9 +277,6 @@ const Home = () => {
             alt=""
           />
         </div>
-      </div>
-      <div>
-        <CommunityTest />
       </div>
       <div>
         <Community />
