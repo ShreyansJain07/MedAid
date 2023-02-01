@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import ScrollToBottom from "react-scroll-to-bottom";
 
 function Chat({ socket, username, room }) {
@@ -22,6 +23,18 @@ function Chat({ socket, username, room }) {
       setCurrentMessage("");
     }
   };
+
+  useEffect(() => {
+    if (messageList) {
+      axios
+        .post(`http://localhost:3001/community2`, {
+          message: messageList[messageList.length-1]
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [messageList]);
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
