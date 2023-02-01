@@ -47,7 +47,7 @@ const Community = () => {
       axios
         .get(`http://localhost:5000/community?chat=${groupname}`)
         .then(function (response) {
-          alert("done");
+          // alert("done");
           setArray(response.data);
           console.log(response.data);
         })
