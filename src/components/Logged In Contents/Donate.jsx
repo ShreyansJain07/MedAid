@@ -160,16 +160,10 @@ const Donate = ({med,setMed}) => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               type="name"
-              className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[20vw] h-[7vh] p-2.5 outline-none"
-              placeholder="First"
+              className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[40vw] h-[7vh] p-2.5 outline-none"
+              placeholder="First and Last Name"
             />
-            <input
-              value={last}
-              onChange={(e) => setLast(e.target.value)}
-              type="text"
-              className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[20vw] h-[7vh] p-2.5 outline-none"
-              placeholder="Last"
-            />
+
           </div>
           <div className="text-left p-5 text-2xl">My Email</div>
           <input
