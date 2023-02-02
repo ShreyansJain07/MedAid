@@ -114,6 +114,15 @@ app.get("/getmedicine", (req, res)=>{
     viewMedicines();
 })
 
+app.get("/medicinerequests", (req, res)=>{
+    let view;
+        async function viewMedicines(){
+            view = await db.collection('reqmedicines').find().toArray();
+            res.json(view);
+        }
+    viewMedicines();
+})
+
 app.post("/userinfo", (req, res)=>{
     var myData = new Useraddress(req.body);
     console.log(myData);
