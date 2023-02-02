@@ -45,39 +45,35 @@ var donateSchema = new mongoose.Schema({
 //Model
 var Medicine = mongoose.model("Medicine", donateSchema);
 
+let snippet = ''
+let highlight = ''
+
 app.get("/medicine", (req, res)=>{
     console.log('yoo');
     requestify.get('https://serpapi.com/search.json?q=dolo+650+details+1mg&location=Maharashtra,+India&hl=hi&gl=in&google_domain=google.co.in&key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2')
     .then(function(response) {
-        let snip = (response.getBody().organic_results[0].snippet);
-        let high = (response.getBody().organic_results[0].snippet_highlighted_words[0]);
-        req.session.snippet = snip
-        req.session.save()
-        req.session.highlight = high
-        req.session.save()
-        console.log(req.session);
+        snippet = (response.getBody().organic_results[0].snippet);
+        highlight = (response.getBody().organic_results[0].snippet_highlighted_words[0]);
     }
     );
 })
 
 app.post("/donate", (req, res) => {
-    // req.body.snippet = snippet;
-    // req.body.highlight = highlight;
+    req.body.snippet = snippet;
+    req.body.highlight = highlight;
 
-    console.log(req.session);
-
-//   var myData = new Medicine(req.body);
-//   console.log(myData);
-//   myData
-//     .save()
-//     .then(() => {
-//       console.log("done");
-//       res.send("This data has been saved to the database");
-//     })
-//     .catch(() => {
-//       console.log("not done");
-//       res.status(400).send("Item was not saved to the database");
-//     });
+  var myData = new Medicine(req.body);
+  console.log(myData);
+  myData
+    .save()
+    .then(() => {
+      console.log("done");
+      res.send("This data has been saved to the database");
+    })
+    .catch(() => {
+      console.log("not done");
+      res.status(400).send("Item was not saved to the database");
+    });
 });
 
 app.listen(port, () => console.log("Connected to port " + port));
