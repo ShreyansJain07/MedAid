@@ -114,7 +114,7 @@ const UserProfile = () => {
             className="bg-white w-full pt-1 pb-3 px-3 rounded-xl ml-3"
           >
             <div className="font-semibold text-center text-xl mt-3 mx-2">
-              Volunteer
+              Community
             </div>
             <img
               className="object-contain mx-auto h-[170px] cursor-pointer"
@@ -123,36 +123,31 @@ const UserProfile = () => {
             />
           </NavLink>
         </div>
-        <br/>
+        <br />
         <div className="bg-white min-h-[187px] mb-3 p-3 rounded-xl">
-          
-            {/* <div className="font-semibold text-xl">Upcoming NGO Events:</div>
-            <div className="flex flex-row justify-between text-xl mb-1">
-              <div className="container bg-green-200 border-4 p-5 rounded-2xl border-white">
-                <div className="text-2xl font-semibold">
-                Health Camp
-                  </div>
-                  <div className="text-left text-xl">
-                    Enroll for a free health camp today and get a free basic health checkup.
+          <div className="font-semibold text-xl">Request Medicines</div>
 
-                  </div>
-
-                
-              </div>
-              <div className="container bg-green-200 border-4 p-5 rounded-2xl border-white">
-                Volunteering
-              </div>
-              <div className="container bg-green-200 border-4 p-5 rounded-2xl border-white">
-                Medical Awareness Seminar
-                <p className="text-left">
-                Hello world
-                </p>
-              </div> */}
-
+          <div className="p-5 space-x-5">
+            <input
+              type="text"
+              className="border-2 p-3 w-[20vw]"
+              placeholder="Enter Name"
+            />
+            <input
+              type="text"
+              className="border-2 p-3 w-[20vw]"
+              placeholder="Enter Name"
+            />
           </div>
-          {/* <Task currentCoins={currentCoins} setCurrentCoins={setCurrentCoins} /> */}
+          <div>
+            <button className="bg-green-600 text-white hover:bg-green-700 font-quicksand transition ease-in rounded-xl font-semibold py-3 px-6">
+              Check Availibility
+            </button>
+          </div>
         </div>
+        {/* <Task currentCoins={currentCoins} setCurrentCoins={setCurrentCoins} /> */}
       </div>
+    </div>
     //</div>
   );
 };
