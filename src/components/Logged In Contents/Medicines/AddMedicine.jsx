@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import axios from 'axios'
 
 const AddMedicine = ({ med, setMed }) => {
+  useEffect(()=>{
+    axios.get(`http://localhost:5000/getmedicine`)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },[])
   return (
     <div className="p-8 min-h-[90vh]">
       <div className="bg-gray-200 rounded-xl py-3 px-5 text-left">
