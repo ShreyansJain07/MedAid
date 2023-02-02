@@ -43,8 +43,35 @@ var donateSchema = new mongoose.Schema({
     highlight: String
 });
 
+var userAddress = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone: String,
+    address: String
+})
+
+var reqSchema = new mongoose.Schema({
+    drugName: String,
+    qty: String
+})
+
+var donatSchema = new mongoose.Schema({
+    name: String,
+    email: String,
+    address: String,
+    city: String,
+    drugName: String,
+    exp: String,
+    qtySelected: String,
+    qty: String,
+    snippet: String,
+    highlight: String
+});
+
 //Model
 var Medicine = mongoose.model("Medicine", donateSchema);
+var Useraddress = mongoose.model("Useraddress", userAddress);
+var Request = mongoose.model("Request", reqSchema);
 
 let snippet = ''
 let highlight = ''
@@ -86,51 +113,79 @@ app.get("/getmedicine", (req, res)=>{
     let view;
         async function viewMedicines(){
             view = await db.collection('medicines').find().toArray();
-            console.log(view);
+            // console.log(view);
             res.json(view);
         }
     viewMedicines();
 })
 
-function setDate(req) {
-    const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
-        "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
-    ];
+app.post("/userinfo", (req, res)=>{
+    var myData = new Useraddress(req.body);
+    console.log(myData);
+    myData.save()
+    .then(() => {
+        console.log("done");
+        res.send("This data has been saved to the database");
+    })
+    .catch(() => {
+        console.log("not done");
+        res.status(400).send("Item was not saved to the database");
+    });
+})
 
-    var d = new Date();
-    var num = d.getDate();
-    var month = monthNames[d.getMonth()];
-    req.body.date = month.substring(0, 3) + " " + num;
-    req.body.postdate = month + " " + num;
+app.post("/request", (req, res)=>{
+    var myData = new Request(req.body);
+    // console.log(req.body);
+    myData.save()
+    .then(() => {
+        console.log("done");
+        res.send("This data has been saved to the database");
+    })
+    .catch(() => {
+        console.log("not done");
+        res.status(400).send("Item was not saved to the database");
+    });
+})
+
+// function setDate(req) {
+//     const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+//         "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
+//     ];
+
+//     var d = new Date();
+//     var num = d.getDate();
+//     var month = monthNames[d.getMonth()];
+//     req.body.date = month.substring(0, 3) + " " + num;
+//     req.body.postdate = month + " " + num;
     
-    var today = new Date();
-    var tomorrow = new Date();
-    tomorrow.setDate(today.getDate()+60);
-    num = tomorrow.getDate();
-    month = monthNames[tomorrow.getMonth()]
-    var diffDays = parseInt((tomorrow - today) / (1000 * 60 * 60 * 24), 10); 
+//     var today = new Date();
+//     var tomorrow = new Date();
+//     tomorrow.setDate(today.getDate()+60);
+//     num = tomorrow.getDate();
+//     month = monthNames[tomorrow.getMonth()]
+//     var diffDays = parseInt((tomorrow - today) / (1000 * 60 * 60 * 24), 10); 
 
-    // req.body.expirydate = month + " " + num + " " + `(IN ${diffDays} DAYS)`;
-}
+//     // req.body.expirydate = month + " " + num + " " + `(IN ${diffDays} DAYS)`;
+// }
 
-const diff = (exp) => {
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    let mm = today.getMonth() + 1; // Months start at 0!
-    let dd = today.getDate();
+// const diff = (exp) => {
+//     const today = new Date();
+//     const yyyy = today.getFullYear();
+//     let mm = today.getMonth() + 1; // Months start at 0!
+//     let dd = today.getDate();
 
-    if (dd < 10) dd = "0" + dd;
-    if (mm < 10) mm = "0" + mm;
+//     if (dd < 10) dd = "0" + dd;
+//     if (mm < 10) mm = "0" + mm;
 
-    const formattedToday = dd + "/" + mm + "/" + yyyy;
-    const date1 = new Date(formattedToday);
-    const date2 = new Date(exp);
-    const diffTime = Math.abs(date2 - date1);
-    const diffDays = Math.ceil(
-      diffTime / (1000 * 60 * 60 * 24)
-    );
-    console.log(diffDays + "days");
-    return diffDays;
-  }
+//     const formattedToday = dd + "/" + mm + "/" + yyyy;
+//     const date1 = new Date(formattedToday);
+//     const date2 = new Date(exp);
+//     const diffTime = Math.abs(date2 - date1);
+//     const diffDays = Math.ceil(
+//       diffTime / (1000 * 60 * 60 * 24)
+//     );
+//     console.log(diffDays + "days");
+//     return diffDays;
+//   }
 
 app.listen(port, () => console.log("Connected to port " + port));

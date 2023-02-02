@@ -14,11 +14,12 @@ const AddMedicine = ({ med, setMed }) => {
       });
   }, []);
 
-  const addToBack = (drugName) =>{
+  const addToBack = (drugName,qty) =>{
     console.log("i was clicked")
     if(drugName){
-      axios.post("http://localhost:5000/volunteer",{
-        drugName:drugName
+      axios.post("http://localhost:5000/request",{
+        drugName:drugName,
+        qty:qty
       }).then(async (response) => {
         console.log('then');
       })
@@ -98,7 +99,7 @@ const AddMedicine = ({ med, setMed }) => {
                 <div className="text-xs">Days Remaining</div>
                 <div className="font-semibold">{diff(item.exp)}</div>
               </div>
-              <div onClick={()=> addToBack(item.drugName)} className="bg-white my-auto h-fit w-[100px]">
+              <div onClick={()=> addToBack(item.drugName,item.qty)} className="bg-white my-auto h-fit w-[100px]">
                 {/* <div className="text-xs">Expiry Date</div>
                 <div className="font-semibold">{item.exp}</div> */}
                 <NavLink to='/ngologin' className="text-white bg-green-600 p-2 rounded-md">
