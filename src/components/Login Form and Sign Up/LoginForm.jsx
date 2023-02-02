@@ -37,7 +37,7 @@ const LoginForm = () => {
     setuserEmail(localStorage.getItem("userEmail"));
     setUsername(localStorage.getItem("userName"));
     if (userEmail) {
-      navigate("/home");
+      navigate("/userprofile");
       //   setsignin(true);
     }
   });
@@ -60,8 +60,8 @@ const LoginForm = () => {
           if (response.data === true) {
             console.log("finee");
             //   setLoginState(true);
-            //   <Navigate to="/home" replace={true} />;
-            navigate("/home");
+            //   <Navigate to="/userprofile" replace={true} />;
+            navigate("/userprofile");
           } else {
           }
         })
@@ -74,7 +74,7 @@ const LoginForm = () => {
   //   useEffect(() => {
   //     if (loginState) {
   //       //   alert("work");
-  //       //   <Navigate to="/home" replace={true} />;
+  //       //   <Navigate to="/userprofile" replace={true} />;
   //     }
   //   }, [loginState]);
 
@@ -83,10 +83,10 @@ const LoginForm = () => {
       <div className="font-bold text-4xl text-red-700 my-4">
         User Login Form
       </div>
-      {/* <NavLink className="bg-red-600 font-semibold rounded-lg hover:bg-red-700 block text-white p-2 m-5" to="/home">
+      {/* <NavLink className="bg-red-600 font-semibold rounded-lg hover:bg-red-700 block text-white p-2 m-5" to="/userprofile">
         Go to Home Page
       </NavLink> */}
-      {/* {loginState && <Navigate to="/home" replace={true} />} */}
+      {/* {loginState && <Navigate to="/userprofile" replace={true} />} */}
       <div className="flex flex-wrap">
         <img
           onClick={() => navigate("/")}
@@ -128,22 +128,22 @@ const LoginForm = () => {
           </NavLink>
           <button
             onClick={() => {
-              //   navigate("/home");
+              //   navigate("/userprofile");
               //   setLoginState(true);
               handlesignin();
             }}
             className="bg-red-600 font-semibold rounded-lg hover:bg-red-700 block text-white p-2 m-5"
-            to="/home"
+            to="/userprofile"
           >
             Sign in with Google
           </button>
           <button
             onClick={() => {
-              navigate("/home");
+              navigate("/userprofile");
               //   setLoginState(true);
             }}
             className="bg-red-600 font-semibold rounded-lg hover:bg-red-700 block text-white p-2 m-5"
-            to="/home"
+            to="/userprofile"
           >
             Forcefully Go to Home Page / Login
           </button>
@@ -152,18 +152,16 @@ const LoginForm = () => {
 
       {/* // New Form  */}
 
-      <div className="py-10 min-h-screen bg-gradient-to-r from-blue-600 to-purple-700">
+      <div className="py-10 min-h-screen bg-green-400">
         <header class="max-w-lg mx-auto">
           <a href="#">
-            <h1 class="text-4xl font-bold text-white text-center">
-              BillaWebsite
-            </h1>
+            <h1 class="text-4xl font-bold text-white text-center">MedAid</h1>
           </a>
         </header>
 
         <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
           <section>
-            <h3 class="font-bold text-2xl">Welcome to BillaWebsite</h3>
+            <h3 class="font-bold text-2xl">Welcome to MedAid</h3>
             <p class="text-gray-600 pt-2">Sign in to your account.</p>
           </section>
 
@@ -181,7 +179,7 @@ const LoginForm = () => {
                   ref={usernameref}
                   type="text"
                   id="name"
-                  class="bg-gray-200 rounded w-full text-purple-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3"
+                  class="bg-gray-200 rounded w-full text-green-700 focus:outline-none border-b-4 border-gray-300 focus:border-green-600 transition duration-500 px-3 pb-3"
                 />
               </div>
               <div class="mb-6 pt-3 rounded bg-gray-200">
@@ -195,31 +193,46 @@ const LoginForm = () => {
                   ref={passwordref}
                   type="password"
                   id="password"
-                  class="bg-gray-200 rounded w-full text-purple-700 focus:outline-none border-b-4 border-gray-300 focus:border-purple-600 transition duration-500 px-3 pb-3"
+                  class="bg-gray-200 rounded w-full text-green-700 focus:outline-none border-b-4 border-gray-300 focus:border-green-600 transition duration-500 px-3 pb-3"
                 />
               </div>
               <div class="flex justify-end">
                 <a
                   href="#"
-                  class="text-sm text-purple-600 hover:text-purple-700 hover:underline mb-6"
+                  class="text-sm text-green-600 hover:text-green-700 hover:underline mb-6"
                 >
                   Forgot your password?
                 </a>
               </div>
-              <button
-                class="bg-gradient-to-r from-blue-600 to-purple-700 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"
-                // type="submit"
-                onClick={() => {
-                  if (usernameref.current.value && passwordref.current.value) {
-                    setUsername(usernameref.current.value);
-                    setPassword(passwordref.current.value);
-                  } else {
-                    alert("Please enter a valid username and password");
-                  }
-                }}
-              >
-                Sign In
-              </button>
+              <div className="w-full flex flex-row">
+                <button
+                  class="bg-green-600 w-full hover:bg-green-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"
+                  // type="submit"
+                  onClick={() => {
+                    if (
+                      usernameref.current.value &&
+                      passwordref.current.value
+                    ) {
+                      setUsername(usernameref.current.value);
+                      setPassword(passwordref.current.value);
+                    } else {
+                      alert("Please enter a valid username and password");
+                    }
+                  }}
+                >
+                  Sign In
+                </button>
+                <button
+                  onClick={() => {
+                    //   navigate("/userprofile");
+                    //   setLoginState(true);
+                    handlesignin();
+                  }}
+                  className="bg-green-600 px-4 ml-2 hover:bg-green-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"
+                >
+                  G
+                </button>
+              </div>
             </form>
           </section>
         </main>

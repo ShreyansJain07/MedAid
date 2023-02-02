@@ -48,7 +48,7 @@ const Footer = () => {
                     <a class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
                   </li>
                   <li>
-                    <a class="text-gray-600 hover:text-gray-800">Medicare Glossary</a>
+                    <a class="text-gray-600 hover:text-gray-800">MedAid Glossary</a>
                   </li>
                   <li>
                     <a class="text-gray-600 hover:text-gray-800">Using this Site</a>
@@ -123,10 +123,10 @@ const Footer = () => {
                 >
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                 </svg>
-                <span class="ml-3 text-xl">MediCare</span>
+                <span class="ml-3 text-xl">MedAid</span>
               </a>
               <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
-                © 2022-2023 MediCare
+                © 2022-2023 MedAid
               </p>
               <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                 <a class="text-gray-500">
