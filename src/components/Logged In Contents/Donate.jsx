@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { motion, useScroll } from "framer-motion";
 
 const Donate = () => {
   const [name, setName] = useState("");
@@ -20,6 +21,9 @@ const Donate = () => {
     setIsOpen(false);
   };
 
+  // On scroll
+  const { scrollYProgress } = useScroll();
+
   useEffect(() => {
     if (name && email && last && address && city && drugName && exp && qty) {
       console.log(name, email);
@@ -37,6 +41,10 @@ const Donate = () => {
 
   return (
     <div>
+      <motion.div
+        className="progress-bar sticky z-30 top-0 left-0 right-0 h-[10px] origin-left bg-green-600"
+        style={{ scaleX: scrollYProgress }}
+      />
       <div className="min-h-screen p-16">
         <div className="flex flex-row">
           <div>
@@ -118,7 +126,7 @@ const Donate = () => {
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              type="text"
+              type="name"
               className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[50vw] h-[7vh] p-2.5"
               placeholder="First"
             />
@@ -135,7 +143,7 @@ const Donate = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
-            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[97.7vw] h-[7vh] p-2.5"
+            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-full h-[7vh] p-2.5"
             placeholder="Enter email here"
           />
           <div className="text-left p-2.5 text-2xl">My Address</div>
@@ -143,7 +151,7 @@ const Donate = () => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             type="text"
-            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[97.7vw] h-[7vh] p-2.5"
+            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-full h-[7vh] p-2.5"
             placeholder="Address Line 1"
           />
           <div className="flex flex-row">

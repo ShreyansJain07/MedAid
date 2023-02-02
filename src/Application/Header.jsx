@@ -26,10 +26,10 @@ const Header = () => {
           </NavLink>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
             <NavLink
-              to="/community2"
+              to="/userprofile"
               className="mr-5 hover:text-orange-600 text-green-600"
             >
-              Home
+              Profile
             </NavLink>
             <NavLink
               to="/donate"
@@ -42,6 +42,12 @@ const Header = () => {
               className="mr-5 hover:text-orange-600 text-green-600"
             >
               Volunteer
+            </NavLink>
+            <NavLink
+              to="/home"
+              className="mr-5 hover:text-orange-600 text-green-600"
+            >
+              Community
             </NavLink>
             <NavLink
               to="/contact"

@@ -77,7 +77,7 @@ const LandingPage = () => {
                   />
                 </div>
                 <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                  <h1 class="title-font text-6xl mb-4 font-medium text-orange-500">
+                  <h1 class="title-font text-6xl mb-4 font-medium text-white">
                     About Us
                   </h1>
                   <p class="mb-8 text-2xl text-white leading-relaxed">
