@@ -75,11 +75,11 @@ const AddMedicine = ({ med, setMed }) => {
                 <div className="text-xs">Days Remaining</div>
                 <div className="font-semibold">{diff(item.exp)}</div>
               </div>
-              <div className="bg-white w-[100px]">
+              <div className="bg-white my-auto h-fit w-[100px]">
                 {/* <div className="text-xs">Expiry Date</div>
                 <div className="font-semibold">{item.exp}</div> */}
-                <NavLink to='/ngologin' className="my-auto text-white bg-green-600 p-2 rounded-md">
-                  Add
+                <NavLink to='/ngologin' className="text-white bg-green-600 p-2 rounded-md">
+                  Request
                 </NavLink>
               </div>
             </div>
