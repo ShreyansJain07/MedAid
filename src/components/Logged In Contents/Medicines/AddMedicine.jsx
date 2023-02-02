@@ -32,12 +32,10 @@ const AddMedicine = ({ med, setMed }) => {
     const date1 = new Date(formattedToday);
     const date2 = new Date(exp);
     const diffTime = Math.abs(date2 - date1);
-    const diffDays = Math.ceil(
-      diffTime / (1000 * 60 * 60 * 24)
-    );
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     console.log(diffDays + "days");
     return diffDays;
-  }
+  };
 
   return (
     <div className="p-8 min-h-[90vh]">
@@ -74,11 +72,7 @@ const AddMedicine = ({ med, setMed }) => {
               </div>
               <div className="bg-white w-[100px]">
                 <div className="text-xs">Days Remaining</div>
-                <div className="font-semibold">
-                  {
-                    diff(item.exp)
-                  }
-                </div>
+                <div className="font-semibold">{diff(item.exp)}</div>
               </div>
             </div>
           );
