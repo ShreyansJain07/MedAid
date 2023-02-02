@@ -26,7 +26,7 @@ const AddMedicine = ({ med, setMed }) => {
         <div className="font-serif py-5 text-center font-semibold text-green-600 text-3xl">
           Medicine
         </div>
-        {med.map((item) => {
+        {med.map((item,id) => {
           return (
             <div className="drop-shadow-xl flex flex-row my-2 py-4 px-6 bg-white">
               <div className="bg-white w-2/12">
