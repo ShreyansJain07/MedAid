@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const AddMedicine = ({ med, setMed }) => {
   useEffect(() => {
@@ -32,12 +33,10 @@ const AddMedicine = ({ med, setMed }) => {
     const date1 = new Date(formattedToday);
     const date2 = new Date(exp);
     const diffTime = Math.abs(date2 - date1);
-    const diffDays = Math.ceil(
-      diffTime / (1000 * 60 * 60 * 24)
-    );
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     console.log(diffDays + "days");
     return diffDays;
-  }
+  };
 
   return (
     <div className="p-8 min-h-[90vh]">
@@ -45,14 +44,14 @@ const AddMedicine = ({ med, setMed }) => {
         <div className="font-serif py-5 text-center font-semibold text-green-600 text-3xl">
           Medicine
         </div>
-        {med.map((item) => {
+        {med.map((item,id) => {
           return (
             <div className="drop-shadow-xl flex flex-row my-2 py-4 px-6 bg-white">
               <div className="bg-white w-2/12">
                 <div className="text-xs">Name</div>
                 <div className="font-semibold">{item.drugName}</div>
               </div>
-              <div className="bg-white w-8/12">
+              <div className="bg-white w-4/12">
                 <div className="text-xs">Details</div>
                 <div className="font-semibold">{item.highlight}</div>
               </div>
@@ -72,13 +71,16 @@ const AddMedicine = ({ med, setMed }) => {
                 <div className="text-xs">Expiry Date</div>
                 <div className="font-semibold">{item.exp}</div>
               </div>
-              <div className="bg-white w-[100px]">
+              <div className="bg-white w-[100px] mx-3">
                 <div className="text-xs">Days Remaining</div>
-                <div className="font-semibold">
-                  {
-                    diff(item.exp)
-                  }
-                </div>
+                <div className="font-semibold">{diff(item.exp)}</div>
+              </div>
+              <div className="bg-white my-auto h-fit w-[100px]">
+                {/* <div className="text-xs">Expiry Date</div>
+                <div className="font-semibold">{item.exp}</div> */}
+                <NavLink to='/ngologin' className="text-white bg-green-600 p-2 rounded-md">
+                  Request
+                </NavLink>
               </div>
             </div>
           );
