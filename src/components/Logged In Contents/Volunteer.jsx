@@ -1,35 +1,19 @@
 import React,{useState} from "react";
+import VolunteerDashboard from "./VolunteerDashboard";
 
 const Volunteer = () => {
-  const [isVol,setIsVol] = useState(false)
+  const [isVol,setIsVol] = useState(false);
   const [name,setName] = useState("")
   const [email,setEmail] = useState("")
   const [phone,setPhone] = useState("");
   const [address,setAddress] = useState("")
   const handleClick = (e) =>{
     e.preventDefault();
-    console.log("i was clicked");
+    setIsVol(true);
     console.log(name,phone,address);
   }
-  return (
-    <div>
-      {/* <div className="bg-gray-300 p-10">
-        <div className="bg-gray-100 p-2 rounded-xl">
-          <div className="text-2xl font-semibold">Details of volunteer</div>
-          <div>Information about volunteer</div>
-          <div className="bg-white p-3">
-            <div className="flex flex-row">
-              <input type="text" className="border" />
-              <input type="text" className="border" />
-            </div>
-            <div className="flex flex-row">
-              <input type="text" className="border" />
-              <input type="text" className="border" />
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* // Chat gpt one  */}
+  return ( <>
+    {!isVol ? <div>
       <div className="p-8">
         <h1 className="text-2xl font-bold mb-4">Volunteer Details</h1>
         <div className="bg-white p-4 shadow-md">
@@ -96,7 +80,8 @@ const Volunteer = () => {
           </form>
         </div>
       </div>
-    </div>
+    </div> :<VolunteerDashboard /> }
+    </>
   );
 };
 
