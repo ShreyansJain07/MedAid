@@ -98,6 +98,7 @@ const Navigation = () => {
     },
   ];
   const [med, setMed] = useState(med1);
+  const [selectedDrug,setSelectedDrug] = useState("")
 
   return (
     <div>
@@ -138,7 +139,7 @@ const Navigation = () => {
                   <Route
                     exact
                     path="/addmedicine"
-                    element={<AddMedicine med={med} setMed={setMed} />}
+                    element={<AddMedicine med={med} setMed={setMed} selectedDrug={selectedDrug} setSelectedDrug={setSelectedDrug} />}
                   />
                   <Route exact path="/userprofile" element={<UserProfile />} />
                   <Route
@@ -147,7 +148,7 @@ const Navigation = () => {
                     element={<VolunteerDashboard />}
                   />
                   <Route exact path="/adminhome" element={<AdminHome />} />
-                  <Route exact path="/ngologin" element={<NgoLogin />} />
+                  <Route exact path="/ngologin" element={<NgoLogin selectedDrug={selectedDrug} setSelectedDrug={setSelectedDrug} />} />
                 </Routes>
               </div>
               {/* </div> */}
