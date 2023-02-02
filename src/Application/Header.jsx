@@ -25,10 +25,24 @@ const Header = () => {
             <span className="ml-3 text-xl">BillaWebsite</span>
           </NavLink>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <NavLink to='/community2' className="mr-5 hover:text-gray-900">Community</NavLink>
-            <a className="mr-5 hover:text-gray-900">Second Link</a>
-            <a className="mr-5 hover:text-gray-900">Third Link</a>
-            <a className="mr-5 hover:text-gray-900">Fourth Link</a>
+            <NavLink
+              to="/community2"
+              className="mr-5 hover:text-orange-600 text-green-600"
+            >
+              Home
+            </NavLink>
+            <NavLink className="mr-5 hover:text-orange-600 text-green-600">
+              Donate
+            </NavLink>
+            <NavLink className="mr-5 hover:text-orange-600 text-green-600">
+              Receive
+            </NavLink>
+            <NavLink
+              to="/contact"
+              className="mr-5 hover:text-orange-600 text-green-600"
+            >
+              Contact Us
+            </NavLink>
           </nav>
           {/* <NavLink
             to="/contact"
