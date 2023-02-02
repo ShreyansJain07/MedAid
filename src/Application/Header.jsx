@@ -22,24 +22,13 @@ const Header = () => {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
-            <span className="ml-3 text-green-600 text-xl">MediCare</span>
+            <span className="ml-3 text-xl">BillaWebsite</span>
           </NavLink>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <NavLink
-              to="/community2"
-              className="mr-5 text-green-600 hover:text-orange-600"
-            >
-              Home
-            </NavLink>
-            <NavLink className="mr-5 text-green-600 hover:text-orange-600">
-              Donate
-            </NavLink>
-            <NavLink className="mr-5 text-green-600 hover:text-orange-600">
-              Receive
-            </NavLink>
-            <NavLink className="mr-5 text-green-600 hover:text-orange-600">
-              Contact Us
-            </NavLink>
+            <NavLink to='/community2' className="mr-5 hover:text-gray-900">Community</NavLink>
+            <a className="mr-5 hover:text-gray-900">Second Link</a>
+            <a className="mr-5 hover:text-gray-900">Third Link</a>
+            <a className="mr-5 hover:text-gray-900">Fourth Link</a>
           </nav>
           {/* <NavLink
             to="/contact"
