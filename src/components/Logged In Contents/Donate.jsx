@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion, useScroll } from "framer-motion";
 
-const Donate = () => {
+const Donate = ({med,setMed}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
