@@ -1,5 +1,6 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import VolunteerDashboard from "./VolunteerDashboard";
+import axios from "axios";
 
 const Volunteer = () => {
   const [isVol,setIsVol] = useState(false);
@@ -7,11 +8,23 @@ const Volunteer = () => {
   const [email,setEmail] = useState("")
   const [phone,setPhone] = useState("");
   const [address,setAddress] = useState("")
+  const [clicked,setClicked] = useState(false)
   const handleClick = (e) =>{
+    setClicked(!clicked)
     e.preventDefault();
     setIsVol(true);
-    console.log(name,phone,address);
   }
+  useEffect(()=>{
+    if(name && email && phone && address){
+      console.log(name,email);
+      axios.post("https://localhost:5000/contact",{
+        name:name,
+        email:email,
+        phone:phone,
+        address:address
+      })
+    }
+  },[clicked])
   return ( <>
     {!isVol ? <div>
       <div className="p-8">
