@@ -4,7 +4,6 @@ import axios from "axios";
 const Donate = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [last, setLast] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
@@ -21,9 +20,23 @@ const Donate = () => {
   };
 
   useEffect(() => {
-    if (name && email && last && address && city && drugName && exp && qty) {
+    axios
+      .get(`http://localhost:5000/medicine?query=dolo650`)
+      // .get(
+      //   `https://serpapi.com/search.json?q=dolo+650+details+1mg&location=Maharashtra,+India&hl=hi&gl=in&google_domain=google.co.in&key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2`
+      // )
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (name && email && address && city && drugName && exp && qty) {
       console.log(name, email);
-      axios.post("https://localhost:5000/contact", {
+      axios.post("http://localhost:5000/donate", {
         name: name,
         email: email,
         address: address,
@@ -121,13 +134,6 @@ const Donate = () => {
               type="text"
               className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[50vw] h-[7vh] p-2.5"
               placeholder="First"
-            />
-            <input
-              value={last}
-              onChange={(e) => setLast(e.target.value)}
-              type="text"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[50vw] h-[7vh] p-2.5"
-              placeholder="Last"
             />
           </div>
           <div className="text-left p-2.5 text-2xl">My Email</div>
