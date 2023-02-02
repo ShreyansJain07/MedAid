@@ -1,4 +1,5 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
+import axios from "axios";
 
 const Donate = () => {
   const [name,setName] = useState("")
@@ -12,11 +13,27 @@ const Donate = () => {
   const [qty,setQty] = useState("")
   const [isOpen, setIsOpen] = useState(false);
   const [qtySelected, setQtySelectedValue] = useState("");
+  const [clicked,setClicked] = useState(false)
 
   const handleOptionClick = (value) => {
     setQtySelectedValue(value);
     setIsOpen(false);
   };
+
+  useEffect(()=>{
+    if(name && email && last && address && city && drugName && exp && qty ){
+      console.log(name,email);
+      axios.post("https://localhost:5000/contact",{
+        name:name,
+        email:email,
+        address:address,
+        city:city,
+        drugName:drugName,
+        exp:exp,
+        qty:qty
+      })
+    }
+  },[clicked])
 
   return (
     <div>
@@ -159,6 +176,7 @@ const Donate = () => {
             </div>
           </div>
         </div>
+          <button className="bg-green-600" onClick={()=> setClicked(!clicked)}>Submit</button>
       </div>
     </div>
   );
