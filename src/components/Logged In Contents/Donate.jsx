@@ -14,7 +14,8 @@ const Donate = ({med,setMed}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [qtySelected, setQtySelectedValue] = useState("");
   const [clicked, setClicked] = useState(false);
-  const [checkbox,setCheckbox] = useState(0)
+  const [checkbox,setCheckbox] = useState(0);
+  const [medClicked,setMedClicked] = useState(false)
 
   const handleOptionClick = (value) => {
     setQtySelectedValue(value);
@@ -39,7 +40,7 @@ const Donate = ({med,setMed}) => {
       .catch(function (error) {
         console.log(error);
       });
-  }, [clicked]);
+  }, [medClicked]);
 
   useEffect(() => {
     if (name && email && address && city && drugName && exp && qty) {
@@ -221,6 +222,7 @@ const Donate = ({med,setMed}) => {
                 type="date"
                 className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
                 placeholder=""
+                onClick={()=> setMedClicked(!medClicked)}
               />
             </div>
           </div>
