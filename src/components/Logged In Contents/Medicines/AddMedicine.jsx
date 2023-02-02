@@ -19,26 +19,6 @@ const AddMedicine = ({ med, setMed }) => {
   // const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   // console.log(diffDays + " days");
 
-  const diff = (exp) => {
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    let mm = today.getMonth() + 1; // Months start at 0!
-    let dd = today.getDate();
-
-    if (dd < 10) dd = "0" + dd;
-    if (mm < 10) mm = "0" + mm;
-
-    const formattedToday = dd + "/" + mm + "/" + yyyy;
-    const date1 = new Date(formattedToday);
-    const date2 = new Date(exp);
-    const diffTime = Math.abs(date2 - date1);
-    const diffDays = Math.ceil(
-      diffTime / (1000 * 60 * 60 * 24)
-    );
-    console.log(diffDays + "days");
-    return diffDays;
-  }
-
   return (
     <div className="p-8 min-h-[90vh]">
       <div className="bg-gray-200 rounded-xl py-3 px-5 text-left">
@@ -76,7 +56,7 @@ const AddMedicine = ({ med, setMed }) => {
                 <div className="text-xs">Days Remaining</div>
                 <div className="font-semibold">
                   {
-                    diff(item.exp)
+                    // diff(item.exp)
                   }
                 </div>
               </div>
