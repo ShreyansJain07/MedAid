@@ -131,9 +131,7 @@ const Donate = ({ med, setMed }) => {
                     id=""
                     onClick={handleChange}
                   />
-                  <div className="w-fit">
-                    Understand that there is a shipping charge
-                  </div>
+                  <div className="w-fit">Is not a controlled substance</div>
                 </div>
                 <div className="w-full py-5">
                   {checkbox !== 5 ? (

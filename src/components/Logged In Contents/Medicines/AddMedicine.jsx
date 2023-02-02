@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
-const AddMedicine = ({ med, setMed }) => {
+const AddMedicine = ({ med, setMed,selectedDrug,setSelectedDrug }) => {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/getmedicine`)
@@ -14,19 +14,20 @@ const AddMedicine = ({ med, setMed }) => {
       });
   }, []);
 
-  const addToBack = (drugName) =>{
-    console.log("i was clicked")
-    if(drugName){
-      axios.post("http://localhost:5000/volunteer",{
-        drugName:drugName
-      }).then(async (response) => {
-        console.log('then');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }
-  }
+  // const addToBack = (drugName,qty) =>{
+  //   console.log("i was clicked")
+  //   if(drugName){
+  //     axios.post("http://localhost:5000/request",{
+  //       drugName:drugName,
+  //       qty:qty
+  //     }).then(async (response) => {
+  //       console.log('then');
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  //   }
+  // }
   
   // const date1 = new Date("7/13/2010");
   // const date2 = new Date("12/15/2010");
@@ -98,7 +99,7 @@ const AddMedicine = ({ med, setMed }) => {
                 <div className="text-xs">Days Remaining</div>
                 <div className="font-semibold">{diff(item.exp)}</div>
               </div>
-              <div onClick={()=> addToBack(item.drugName)} className="bg-white my-auto h-fit w-[100px]">
+              <div onClick={()=> setSelectedDrug(item.drugName)} className="bg-white my-auto h-fit w-[100px]">
                 {/* <div className="text-xs">Expiry Date</div>
                 <div className="font-semibold">{item.exp}</div> */}
                 <NavLink to='/ngologin' className="text-white bg-green-600 p-2 rounded-md">
