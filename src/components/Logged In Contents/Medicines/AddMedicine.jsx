@@ -29,9 +29,18 @@ const AddMedicine = ({ med, setMed }) => {
     if (dd < 10) dd = "0" + dd;
     if (mm < 10) mm = "0" + mm;
 
-    const formattedToday = dd + "/" + mm + "/" + yyyy;
+    var arr = exp.split('/')
+
+    const formattedToday = mm + "/" + dd + "/" + yyyy;
+    const formattedExp = arr[1] + "/" + arr[0] + "/" + arr[2];
     const date1 = new Date(formattedToday);
-    const date2 = new Date(exp);
+    const date2 = new Date(formattedExp);
+    console.log('exp');
+    console.log(exp);
+    console.log('first');
+    console.log(date1);
+    console.log('second');
+    console.log(date2);
     const diffTime = Math.abs(date2 - date1);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     console.log(diffDays + "days");
@@ -44,7 +53,7 @@ const AddMedicine = ({ med, setMed }) => {
         <div className="font-serif py-5 text-center font-semibold text-green-600 text-3xl">
           Medicine
         </div>
-        {med.map((item,id) => {
+        {med.map((item) => {
           return (
             <div className="drop-shadow-xl flex flex-row my-2 py-4 px-6 bg-white">
               <div className="bg-white w-2/12">

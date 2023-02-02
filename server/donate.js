@@ -60,7 +60,6 @@ app.get("/medicine", (req, res)=>{
     );
 })
 
-
 app.post("/donate", (req, res) => {
     req.body.snippet = snippet;
     req.body.highlight = highlight;
@@ -92,5 +91,46 @@ app.get("/getmedicine", (req, res)=>{
         }
     viewMedicines();
 })
+
+function setDate(req) {
+    const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+        "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
+    ];
+
+    var d = new Date();
+    var num = d.getDate();
+    var month = monthNames[d.getMonth()];
+    req.body.date = month.substring(0, 3) + " " + num;
+    req.body.postdate = month + " " + num;
+    
+    var today = new Date();
+    var tomorrow = new Date();
+    tomorrow.setDate(today.getDate()+60);
+    num = tomorrow.getDate();
+    month = monthNames[tomorrow.getMonth()]
+    var diffDays = parseInt((tomorrow - today) / (1000 * 60 * 60 * 24), 10); 
+
+    // req.body.expirydate = month + " " + num + " " + `(IN ${diffDays} DAYS)`;
+}
+
+const diff = (exp) => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1; // Months start at 0!
+    let dd = today.getDate();
+
+    if (dd < 10) dd = "0" + dd;
+    if (mm < 10) mm = "0" + mm;
+
+    const formattedToday = dd + "/" + mm + "/" + yyyy;
+    const date1 = new Date(formattedToday);
+    const date2 = new Date(exp);
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(
+      diffTime / (1000 * 60 * 60 * 24)
+    );
+    console.log(diffDays + "days");
+    return diffDays;
+  }
 
 app.listen(port, () => console.log("Connected to port " + port));
