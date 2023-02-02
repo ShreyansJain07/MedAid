@@ -23,7 +23,7 @@ useEffect(joinRoom, [room]);
         <div className="joinChatContainer">
           <h3>Join A Chat</h3>
           <input
-            type="text"
+            type="text" className="mx-auto my-[7px]"
             placeholder="John..."
             onChange={(event) => {
               setUsername(event.target.value);
