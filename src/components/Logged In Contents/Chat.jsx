@@ -28,7 +28,7 @@ function Chat({ socket, username, room }) {
     if (messageList) {
       axios
         .post(`http://localhost:3001/community2`, {
-          message: messageList[messageList.length-1]
+          message: messageList[messageList.length - 1],
         })
         .catch((error) => {
           console.log(error);
@@ -43,11 +43,11 @@ function Chat({ socket, username, room }) {
   }, [socket]);
 
   return (
-    <div className="chat-window">
-      <div className="chat-header">
+    <div className="chat-window py-10 max-w-[900px] mx-auto">
+      <div className="chat-header rounded-lg bg-green-600">
         <p>Live Chat</p>
       </div>
-      <div className="chat-body">
+      <div className="chat-body rounded-t-lg py-5 mt-5">
         <ScrollToBottom className="message-container">
           {messageList.map((messageContent) => {
             return (
@@ -60,8 +60,12 @@ function Chat({ socket, username, room }) {
                     <p>{messageContent.message}</p>
                   </div>
                   <div className="message-meta flex">
-                    <p className="" id="time">{messageContent.time}</p>
-                    <p className="ml-[10px] font-bold" id="author">{messageContent.author}</p>
+                    <p className="" id="time">
+                      {messageContent.time}
+                    </p>
+                    <p className="ml-[10px] font-bold" id="author">
+                      {messageContent.author}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -69,10 +73,11 @@ function Chat({ socket, username, room }) {
           })}
         </ScrollToBottom>
       </div>
-      <div className="chat-footer h-[40px] border flex">
+      <div className="chat-footer rounded-b-lg h-[40px] border flex">
         <input
           type="text"
           value={currentMessage}
+          className="text-green-600 font-semibold"
           placeholder="Hey..."
           onChange={(event) => {
             setCurrentMessage(event.target.value);
@@ -81,7 +86,22 @@ function Chat({ socket, username, room }) {
             event.key === "Enter" && sendMessage();
           }}
         />
-        <button onClick={sendMessage}>&#9658;</button>
+        <button className="hover:bg-green-600" onClick={sendMessage}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6 mx-10 hover:stroke-white hover:bg-green-600 stroke-green-600"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
