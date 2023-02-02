@@ -69,23 +69,23 @@ const UserProfile = () => {
           </div>
           {/* <Task currentCoins={currentCoins} setCurrentCoins={setCurrentCoins} /> */}
         </div>
-        <div className="flex flex-wrap w-full">
+        <div className="flex flex-row w-full">
           <NavLink
             to="/donate"
-            className="bg-white pt-1 pb-3 px-3 rounded-xl ml-3"
+            className="bg-white w-full pt-1 pb-3 px-3 rounded-xl ml-3"
           >
             <div className="font-semibold text-center text-xl mt-3 mx-2">
               Donate
             </div>
             <img
-              className="w-[170px] h-[170px] object-contain cursor-pointer mx-auto"
+              className="h-[170px] object-contain cursor-pointer mx-auto"
               src="https://img.freepik.com/free-vector/volunteers-packing-donation-boxes_74855-5299.jpg?w=2000"
               alt=""
             />
           </NavLink>
           <NavLink
             to="/addmedicine"
-            className="bg-white w-[210px] pt-1 pb-3 px-3 rounded-xl ml-3"
+            className="bg-white w-full pt-1 pb-3 px-3 rounded-xl ml-3"
           >
             <div className="font-semibold text-center text-xl mt-3 mx-2">
               Receive/Shop
@@ -98,7 +98,7 @@ const UserProfile = () => {
           </NavLink>
           <NavLink
             to="/volunteer"
-            className="bg-white w-[210px] pt-1 pb-3 px-3 rounded-xl ml-3"
+            className="bg-white w-full pt-1 pb-3 px-3 rounded-xl ml-3"
           >
             <div className="font-semibold text-center text-xl mt-3 mx-2">
               Volunteer
@@ -106,6 +106,19 @@ const UserProfile = () => {
             <img
               className="object-contain mx-auto h-[170px] cursor-pointer"
               src="https://kalamfoundation.org/wp-content/uploads/2021/05/people-volunteering-donating-money_53876-43052.jpg"
+              alt=""
+            />
+          </NavLink>
+          <NavLink
+            to="/volunteer"
+            className="bg-white w-full pt-1 pb-3 px-3 rounded-xl ml-3"
+          >
+            <div className="font-semibold text-center text-xl mt-3 mx-2">
+              Volunteer
+            </div>
+            <img
+              className="object-contain mx-auto h-[170px] cursor-pointer"
+              src="https://img.freepik.com/free-vector/community-concept-illustration_114360-1021.jpg?w=2000"
               alt=""
             />
           </NavLink>

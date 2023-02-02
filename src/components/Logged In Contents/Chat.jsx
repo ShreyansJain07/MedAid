@@ -43,7 +43,7 @@ function Chat({ socket, username, room }) {
   }, [socket]);
 
   return (
-    <div className="chat-window py-10 max-w-[900px] mx-auto">
+    <div className="chat-window py-10 min-h-[70vh] max-w-[900px] mx-auto">
       <div className="chat-header rounded-lg bg-green-600">
         <p>Live Chat</p>
       </div>
@@ -78,7 +78,7 @@ function Chat({ socket, username, room }) {
           type="text"
           value={currentMessage}
           className="text-green-600 font-semibold"
-          placeholder="Hey..."
+          placeholder="Enter message..."
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}
