@@ -43,8 +43,30 @@ var donateSchema = new mongoose.Schema({
     highlight: String
 });
 
+var userAddress = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone: String,
+    address: String,
+    drugName: String
+})
+
+var requestMedicine = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone: String,
+    address: String,
+    reqMed: String
+})
+
+// const dummy={
+//     userid:{Schema.Types.ObjectId} m//abc
+// }
+
 //Model
 var Medicine = mongoose.model("Medicine", donateSchema);
+var Useraddress = mongoose.model("Useraddress", userAddress);
+var Reqmedicine = mongoose.model("Reqmedicine", requestMedicine);
 
 let snippet = ''
 let highlight = ''
@@ -86,51 +108,46 @@ app.get("/getmedicine", (req, res)=>{
     let view;
         async function viewMedicines(){
             view = await db.collection('medicines').find().toArray();
-            console.log(view);
+            // view = await db.collection('medicines').find().toArray();.pop
             res.json(view);
         }
     viewMedicines();
 })
 
-function setDate(req) {
-    const monthNames = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
-        "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
-    ];
+app.get("/medicinerequests", (req, res)=>{
+    let view;
+        async function viewMedicines(){
+            view = await db.collection('reqmedicines').find().toArray();
+            res.json(view);
+        }
+    viewMedicines();
+})
 
-    var d = new Date();
-    var num = d.getDate();
-    var month = monthNames[d.getMonth()];
-    req.body.date = month.substring(0, 3) + " " + num;
-    req.body.postdate = month + " " + num;
-    
-    var today = new Date();
-    var tomorrow = new Date();
-    tomorrow.setDate(today.getDate()+60);
-    num = tomorrow.getDate();
-    month = monthNames[tomorrow.getMonth()]
-    var diffDays = parseInt((tomorrow - today) / (1000 * 60 * 60 * 24), 10); 
+app.post("/userinfo", (req, res)=>{
+    var myData = new Useraddress(req.body);
+    console.log(myData);
+    myData.save()
+    .then(() => {
+        console.log("done");
+        res.send("This data has been saved to the database");
+    })
+    .catch(() => {
+        console.log("not done");
+        res.status(400).send("Item was not saved to the database");
+    });
+})
 
-    // req.body.expirydate = month + " " + num + " " + `(IN ${diffDays} DAYS)`;
-}
-
-const diff = (exp) => {
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    let mm = today.getMonth() + 1; // Months start at 0!
-    let dd = today.getDate();
-
-    if (dd < 10) dd = "0" + dd;
-    if (mm < 10) mm = "0" + mm;
-
-    const formattedToday = dd + "/" + mm + "/" + yyyy;
-    const date1 = new Date(formattedToday);
-    const date2 = new Date(exp);
-    const diffTime = Math.abs(date2 - date1);
-    const diffDays = Math.ceil(
-      diffTime / (1000 * 60 * 60 * 24)
-    );
-    console.log(diffDays + "days");
-    return diffDays;
-  }
+app.post("/reqmed", (req, res)=>{
+    var myData = new Reqmedicine(req.body);
+    myData.save()
+    .then(() => {
+        console.log("done");
+        res.send("This data has been saved to the database");
+    })
+    .catch(() => {
+        console.log("not done");
+        res.status(400).send("Item was not saved to the database");
+    });
+})
 
 app.listen(port, () => console.log("Connected to port " + port));

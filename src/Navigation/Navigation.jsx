@@ -7,6 +7,7 @@ import Donate from "../components/Logged In Contents/Donate";
 import Home from "../components/Logged In Contents/Home";
 import AddMedicine from "../components/Logged In Contents/Medicines/AddMedicine";
 import NGO from "../components/Logged In Contents/NGO";
+import RequestMedicine from "../components/Logged In Contents/RequestMedicine";
 import NgoLogin from "../components/Logged In Contents/User/NgoLogin";
 import OCR from "../components/Logged In Contents/User/OCR";
 import UserProfile from "../components/Logged In Contents/User/UserProfile";
@@ -97,6 +98,7 @@ const Navigation = () => {
     },
   ];
   const [med, setMed] = useState(med1);
+  const [selectedDrug,setSelectedDrug] = useState("")
 
   return (
     <div>
@@ -131,8 +133,13 @@ const Navigation = () => {
                   />
                   <Route
                     exact
+                    path="/requestmedicine"
+                    element={<RequestMedicine />}
+                  />
+                  <Route
+                    exact
                     path="/addmedicine"
-                    element={<AddMedicine med={med} setMed={setMed} />}
+                    element={<AddMedicine med={med} setMed={setMed} selectedDrug={selectedDrug} setSelectedDrug={setSelectedDrug} />}
                   />
                   <Route exact path="/userprofile" element={<UserProfile />} />
                   <Route
@@ -141,7 +148,7 @@ const Navigation = () => {
                     element={<VolunteerDashboard />}
                   />
                   <Route exact path="/adminhome" element={<AdminHome />} />
-                  <Route exact path="/ngologin" element={<NgoLogin />} />
+                  <Route exact path="/ngologin" element={<NgoLogin selectedDrug={selectedDrug} setSelectedDrug={setSelectedDrug} />} />
                 </Routes>
               </div>
               {/* </div> */}
