@@ -5,12 +5,14 @@ const VolunteerDashboard = () => {
     {
       drugName: "Dolo650",
       qty: "2",
+      phone: "9999887676",
       dAddress: "Good morning this is an adress",
       rAddress: "Good morning this is a receiver adress",
     },
     {
       drugName: "Dolo2000",
       qty: "3",
+      phone: "9999887676",
       dAddress: "Good morning this is an adress",
       rAddress: "Good morning this is a receiver adress",
     },
@@ -44,6 +46,10 @@ const VolunteerDashboard = () => {
               <div className="w-4/12 px-2">
                 <div className="text-xs">Receiver's Address</div>
                 <div className="font-semibold text-left">{item1.rAddress}</div>
+              </div>
+              <div className="w-2/12 px-2">
+                <div className="text-xs">Contact info</div>
+                <div className="font-semibold text-left">{item1.phone}</div>
               </div>
               <div className="w-2/12 px-2">
                 <button>

@@ -20,7 +20,7 @@ const OCR = ({ drugName }) => {
   return (
     <div>
       <input type="file" onChange={handleFileUpload} />
-      {progressRate != 1 && <p>{Math.ceil(progressRate.progress * 100)}%</p>}
+      {progressRate != 1 && <p>Progress: {Math.ceil(progressRate.progress * 100)}%</p>}
       <p>{text}</p>
     </div>
   );
