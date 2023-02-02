@@ -15,11 +15,15 @@ const Donate = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [qtySelected, setQtySelectedValue] = useState("");
   const [clicked, setClicked] = useState(false);
+  const [checkbox,setCheckbox] = useState(0)
 
   const handleOptionClick = (value) => {
     setQtySelectedValue(value);
     setIsOpen(false);
   };
+  const handleChange = (e) =>{
+    setCheckbox(checkbox+1)
+  }
 
   // On scroll
   const { scrollYProgress } = useScroll();
@@ -62,6 +66,7 @@ const Donate = () => {
                   type="checkbox"
                   name=""
                   id=""
+                  onClick={handleChange}
                 />
                 <div className="w-fit">
                   Is not a controlled Substance (No narcotics or opioids)
@@ -73,6 +78,7 @@ const Donate = () => {
                   type="checkbox"
                   name=""
                   id=""
+                  onClick={handleChange}
                 />
                 <div className="w-fit">
                   Will not expire for atleast 5 months
@@ -84,6 +90,7 @@ const Donate = () => {
                   type="checkbox"
                   name=""
                   id=""
+                  onClick={handleChange}
                 />
                 <div className="w-fit">
                   Is in sealed packaging (Standard amber vials not eligible)
@@ -95,6 +102,7 @@ const Donate = () => {
                   type="checkbox"
                   name=""
                   id=""
+                  onClick={handleChange}
                 />
                 <div className="w-fit">Does not require refrigeration</div>
               </div>
@@ -104,11 +112,15 @@ const Donate = () => {
                   type="checkbox"
                   name=""
                   id=""
+                  onClick={handleChange}
                 />
                 <div className="w-fit">
                   Understand that there is a shipping charge
                 </div>
               </div>
+              <div className="w-fit">
+                  {checkbox!==5?<span className="text-red-600 font-semibold">Please check all checkboxes</span>:<span className="text-green-600 font-semibold">You are good to go</span>}
+                </div>
             </div>
           </div>
           <div className="w-1/2 p-4">
@@ -182,16 +194,8 @@ const Donate = () => {
           <div className="font-bold my-4 text-green-600 text-4xl">
             List of Donated Medicine
           </div>
-          {/* <div>Item</div> */}
           <div className="p-2.5 text-left flex flex-row">
-            {/* <div>
-              <div>National Drug Code (NDC)</div>
-              <input type="text" className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5" placeholder="" />
-            </div>
-            <div>
-              <div>Formatted NDC</div>
-              <input type="text" className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5" placeholder="" />
-            </div> */}
+            
             <div className="w-full">
               <div className="ml-1">Drug Name and Strength</div>
               <input
