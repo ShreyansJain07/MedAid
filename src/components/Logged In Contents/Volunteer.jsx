@@ -1,6 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 
 const Volunteer = () => {
+  const [isVol,setIsVol] = useState(false)
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+  const [phone,setPhone] = useState("");
+  const [address,setAddress] = useState("")
+  const handleClick = (e) =>{
+    e.preventDefault();
+    console.log("i was clicked");
+    console.log(name,phone,address);
+  }
   return (
     <div>
       {/* <div className="bg-gray-300 p-10">
@@ -33,6 +43,8 @@ const Volunteer = () => {
                 type="text"
                 id="name"
                 name="name"
+                value={name}
+                onChange={(e)=> setName(e.target.value)}
               />
             </div>
             <div className="mb-4">
@@ -44,6 +56,8 @@ const Volunteer = () => {
                 type="email"
                 id="email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="mb-4">
@@ -55,22 +69,27 @@ const Volunteer = () => {
                 type="text"
                 id="phone"
                 name="phone"
+                value={phone}
+                onChange={(e)=> setPhone(e.target.value)}
               />
             </div>
             <div className="mb-4">
-              <label className="block font-bold mb-2" htmlFor="skills">
-                Skills
+              <label className="block font-bold mb-2" htmlFor="address">
+                Address
               </label>
               <textarea
                 className="w-full border border-gray-400 p-2"
-                id="skills"
-                name="skills"
+                id="address"
+                name="address"
                 rows="4"
+                value={address}
+                onChange={(e)=> setAddress(e.target.value)}
               />
             </div>
             <button
               className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
               type="submit"
+              onClick={handleClick}
             >
               Submit
             </button>
