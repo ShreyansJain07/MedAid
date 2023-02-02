@@ -25,10 +25,10 @@ const Home = () => {
         <Community2 />
       </div>
 
-      <motion.div
+      {/* <motion.div
         className="progress-bar sticky z-30 top-0 left-0 right-0 h-[10px] origin-left bg-green-600"
         style={{ scaleX: scrollYProgress }}
-      />
+      /> */}
       {/* // Modal start */}
       {/* <div className="bg-black min-h-[]">
         <button
@@ -79,7 +79,7 @@ const Home = () => {
         </Modal>
       </div> */}
       {/* // Modal end */}
-      <div className="min-h-screen">
+      {/* <div className="min-h-screen">
         <div className="p-4">
           <div className="my-4 space-x-8 flex flex-row">
             <div className="border w-1/5 h-[125px]"></div>
@@ -102,7 +102,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <div>
         <About />
       </div> */}
