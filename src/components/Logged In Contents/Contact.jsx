@@ -78,12 +78,12 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  className="mt-5 py-2 bg-gray-200 rounded h-[50vh] w-[20vw] focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  className="mt-5 py-2 bg-gray-200 rounded-xl h-[50vh] w-[20vw] focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                   placeholder="Write your message here..."
                 ></textarea>
               </div>
             </div>
-            <button className="mx-auto transition ease-in text-white w-1/3 font-semibold bg-green-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-700 rounded text-lg">
+            <button className="mx-auto transition ease-in text-white w-1/3 font-semibold bg-green-600 border-0 py-2 px-6 focus:outline-none hover:bg-green-700 rounded-md text-lg">
               Submit
             </button>
           </div>
