@@ -50,7 +50,7 @@ const RequestMedicine = () => {
                     type="text"
                     id="name"
                     name="name"
-                    value={name}
+                    value={reqMed}
                     onChange={(e) => setReqMed(e.target.value)}
                   />
                 </div>

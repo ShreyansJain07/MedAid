@@ -51,6 +51,14 @@ var userAddress = new mongoose.Schema({
     drugName: String
 })
 
+var requestMedicine = new mongoose.Schema({
+    name: String,
+    email: String,
+    phone: String,
+    address: String,
+    reqMed: String
+})
+
 // const dummy={
 //     userid:{Schema.Types.ObjectId} m//abc
 // }
@@ -58,6 +66,7 @@ var userAddress = new mongoose.Schema({
 //Model
 var Medicine = mongoose.model("Medicine", donateSchema);
 var Useraddress = mongoose.model("Useraddress", userAddress);
+var Reqmedicine = mongoose.model("Reqmedicine", requestMedicine);
 
 let snippet = ''
 let highlight = ''
@@ -108,6 +117,19 @@ app.get("/getmedicine", (req, res)=>{
 app.post("/userinfo", (req, res)=>{
     var myData = new Useraddress(req.body);
     console.log(myData);
+    myData.save()
+    .then(() => {
+        console.log("done");
+        res.send("This data has been saved to the database");
+    })
+    .catch(() => {
+        console.log("not done");
+        res.status(400).send("Item was not saved to the database");
+    });
+})
+
+app.post("/reqmed", (req, res)=>{
+    var myData = new Reqmedicine(req.body);
     myData.save()
     .then(() => {
         console.log("done");
