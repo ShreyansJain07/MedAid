@@ -31,20 +31,22 @@ const LandingPage = () => {
             Go to Login Page
           </NavLink> */}
           <div>
-            <div className="min-h-screen bg-[url('https://meditro.themetrades.com/react/static/media/bg1.c53c8971.jpg')]">
+            <div className="min-h-[90vh] bg-gray-100">
               <section class="text-gray-600 body-font">
                 <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                   <div class="lg:flex-grow md:w-1/2 pl-5 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                    <h1 class="text-lg mb-4 ml-2 font-medium text-green-700">
-                      We Provide All Health Care Solution
-                    </h1>
-                    <p class="mb-8 text-[45px] font-bold text-green-600">
-                      Protect Your Health And Take Care To Of Your Health
+                    
+                    <p class="mb-8 font-serif text-8xl font-bold text-green-600">
+                      Good Medicine for Good Health
                     </p>
+                    <h1 class="text-lg mb-4 ml-2 text-2xl font-medium text-green-700">
+                      Medicines for everyone, delivered to your doorstep.
+                    </h1>
                     <div class="flex w-full md:justify-start justify-center items-end">
+                      <br/><br/><br/><br/>
                       <NavLink
                         to="/login"
-                        className="inline-flex transition ease-in ml-2 font-semibold text-white bg-orange-500 border-0 py-3 px-6 focus:outline-none hover:bg-orange-600 rounded text-sm"
+                        className="shadow-xl inline-flex transition ease-in font-semibold text-2xl text-white bg-green-600 border-0 py-3 px-6 focus:outline-none hover:bg-green-400 rounded text-sm"
                       >
                         Get Started
                       </NavLink>
@@ -62,40 +64,95 @@ const LandingPage = () => {
             </div>
           </div>
           {/* // About us */}
-          <div>
-            <section class="text-gray-600 bg-[url('https://meditro.themetrades.com/react/static/media/bg1.c53c8971.jpg')] body-font">
+          <div className="">
+            <section class="min-h-[90vh] text-gray-600 bg-green-400 body-font">
               <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                   <img
-                    class="object-cover object-center rounded"
+                    class="object-cover object-center shadow-xl rounded-xl h-[40vh] w-[40vw]"
                     alt="hero"
-                    src="https://dummyimage.com/720x600"
+                    src="https://cdn.dribbble.com/users/1450874/screenshots/14691183/media/f6e87b3caa3bc8ce90dbfb7af515fad6.jpg?compress=1&resize=400x300&vertical=top"
                   />
                 </div>
                 <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                  <div className="text-orange-600 font-bold">About Us</div>
-                  <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-green-600">
-                    Medicine centre
+                  
+                  <h1 class="title-font sm:text-8xl text-8xl mb-4 font-medium text-green-600">
+                    About Us
                   </h1>
-                  <p class="mb-8 leading-relaxed">
+                  <p class="mb-8 text-4xl text-white leading-relaxed">
                     India's Pharmaceutical industry loses around Rs. 5 billion
                     annually on account of destruction of expired drugs, hitting
                     the bottom line of drug manufacturers. MediCare aims to
                     combat this problem by creating a market for
-                    unused medicines.
+                    unused medicines.
                   </p>
                   <div class="flex justify-center">
-                    <button class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
-                      Button
-                    </button>
-                    <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                      Button
+    
+                    <button class="shadow-xl ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-green-200 rounded text-lg duration-500">
+                      - Learn More -
                     </button>
                   </div>
                 </div>
               </div>
             </section>
+
           </div>
+          <section className="flex flex-row p-2.5 bg-green-100 min-h-[80vh]">
+            <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
+              <div className="text-6xl text-green-600 font-bold">
+                10 years
+              </div>
+              <br/><br/>
+              <div className="p-5 text-4xl text-gray-600 font-semibold">
+                <p>
+                of serving your medical needs and helping out NGOs.
+                </p>
+              
+              </div>
+              
+            </div>
+            <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
+            <div className="text-6xl text-green-600 font-bold">
+                10,000+ reviews
+              </div>
+              <div className="p-5 text-4xl text-gray-600 font-semibold">
+                <p>
+                by satisfied customers and volunteers.
+                </p>
+              
+              </div>
+            </div>
+            <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
+            <div className="text-6xl text-green-600 font-bold">
+                Hundreds
+              </div>
+              <br/><br/>
+              <div className="p-5 text-4xl text-gray-600 font-semibold">
+                <p>
+                of verified recommendations by doctors.
+                </p>
+              
+              </div>
+            </div>
+            <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
+            <div className="text-6xl text-green-600 font-bold">
+                12
+              </div>
+              <br/> <br/>
+              <div className="p-5 text-4xl text-gray-600 font-semibold">
+                <p>
+                awards given to the website for efficient design.
+                </p>
+              
+              </div>
+            </div>
+
+          </section>
+          <section>
+          <h1 class="title-font sm:text-8xl text-center text-8xl mb-4 font-medium text-green-600">
+                    How it Works:
+                  </h1>
+          </section>
         </div>
       )}
     </div>
