@@ -38,7 +38,7 @@ const LandingPage = () => {
                     <p class="mb-8 font-serif text-8xl font-bold text-green-600">
                       Good Medicine for Good Health
                     </p>
-                    <h1 class="text-lg mb-4 ml-2 text-2xl font-medium text-green-700">
+                    <h1 class="mb-4 ml-2 text-2xl font-medium text-green-700">
                       Medicines for everyone, delivered to your doorstep.
                     </h1>
                     <div class="flex w-full md:justify-start justify-center items-end">

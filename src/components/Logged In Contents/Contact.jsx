@@ -15,7 +15,7 @@ const Contact = () => {
             <div className="flex flex-row p-2.5">
               <div className="p-5">
                 <div className="relative mb-4">
-                  <label for="name" className="text-xl text-gray-600">
+                  <label for="name" className="ml-1 text-xl text-gray-600">
                     Name
                   </label>
                   <br />
@@ -23,7 +23,7 @@ const Contact = () => {
                     type="text"
                     id="name"
                     name="name"
-                    className="w-[30vw] bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-[30vw] bg-white rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="John Doe"
                   />
                 </div>
@@ -31,7 +31,7 @@ const Contact = () => {
                 <div className="relative mb-4">
                   <label
                     for="email"
-                    className="leading-7 text-xl text-gray-600"
+                    className="ml-1 leading-7 text-xl text-gray-600"
                   >
                     Email
                   </label>
@@ -40,7 +40,7 @@ const Contact = () => {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-[30vw] bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-[30vw] bg-white rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="johndoe@example.com"
                   />
                 </div>
@@ -49,7 +49,7 @@ const Contact = () => {
                   <br />
                   <label
                     for="email"
-                    className="leading-7 text-xl text-gray-600"
+                    className="ml-1 leading-7 text-xl text-gray-600"
                   >
                     Phone Number
                   </label>
@@ -58,7 +58,7 @@ const Contact = () => {
                     type="tel"
                     id="email"
                     name="email"
-                    className="w-[30vw] bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-[30vw] bg-white rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     placeholder="9999888770"
                   />
                 </div>
@@ -78,7 +78,7 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  className="mt-5 py-2 bg-gray-200 rounded h-[50vh] w-[20vw] focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                  className="mt-8 bg-gray-200 rounded h-[50vh] w-[20vw] focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                   placeholder="Write your message here..."
                 ></textarea>
               </div>
