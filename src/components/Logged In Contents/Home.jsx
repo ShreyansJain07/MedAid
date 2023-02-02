@@ -2,8 +2,8 @@ import React from "react";
 import { motion, useScroll } from "framer-motion";
 import { Modal } from "@mui/material";
 import About from "./About";
-import ChatBot from "./ChatBot";
-import AnimationTest from "./AnimationTest";
+// import ChatBot from "./ChatBot";
+// import AnimationTest from "./AnimationTest";
 import Community from "./Community";
 import Community2 from "./Community2";
 
@@ -24,12 +24,13 @@ const Home = () => {
       <div>
         <Community2/>
       </div>
+      
       <motion.div
         className="progress-bar sticky z-30 top-0 left-0 right-0 h-[10px] origin-left bg-red-600"
         style={{ scaleX: scrollYProgress }}
       />
       {/* // Modal start */}
-      <div className="bg-black min-h-screen">
+      <div className="bg-black min-h-[]">
         <button
           className="text-white border border-white rounded-full p-3"
           onClick={handleOpen}
@@ -284,12 +285,12 @@ const Home = () => {
       <div>
         <About />
       </div>
-      <div>
+      {/* <div>
         <ChatBot />
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <AnimationTest />
-      </div>
+      </div> */}
     </div>
   );
 };

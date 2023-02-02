@@ -3,6 +3,7 @@ import { useState, createContext, useMemo } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import AdminHome from "../components/Admin Logged In Contents/AdminHome";
 import Contact from "../components/Logged In Contents/Contact";
+import Donate from "../components/Logged In Contents/Donate";
 import Home from "../components/Logged In Contents/Home";
 import LandingPage from "../components/Login Form and Sign Up/LandingPage";
 import LoginForm from "../components/Login Form and Sign Up/LoginForm";
@@ -58,6 +59,7 @@ const Navigation = () => {
                   <Route exact path="/signup" element={<SignUpPage />} />
                   <Route exact path="/home" element={<Home />} />
                   <Route exact path="/contact" element={<Contact />} />
+                  <Route exact path="/donate" element={<Donate />} />
                   <Route exact path="/adminhome" element={<AdminHome />} />
                 </Routes>
               </div>
