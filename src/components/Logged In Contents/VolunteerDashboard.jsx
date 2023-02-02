@@ -11,7 +11,6 @@ const VolunteerDashboard = () => {
       <div>
         <div></div>
       </div>
-      {/* // Chat gpt one */}
       <div className="bg-gray-100 min-h-screen">
         <header className="bg-white">
           <nav className="flex items-center justify-between px-6 py-4">

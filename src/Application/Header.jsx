@@ -31,11 +31,17 @@ const Header = () => {
             >
               Home
             </NavLink>
-            <NavLink className="mr-5 hover:text-orange-600 text-green-600">
+            <NavLink
+              to="/donate"
+              className="mr-5 hover:text-orange-600 text-green-600"
+            >
               Donate
             </NavLink>
-            <NavLink className="mr-5 hover:text-orange-600 text-green-600">
-              Receive
+            <NavLink
+              to="/volunteer"
+              className="mr-5 hover:text-orange-600 text-green-600"
+            >
+              Volunteer
             </NavLink>
             <NavLink
               to="/contact"
