@@ -54,7 +54,7 @@ body {
 
 .joinChatContainer {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   text-align: center;
 }
 

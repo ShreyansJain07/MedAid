@@ -84,7 +84,7 @@ const UserProfile = () => {
             />
           </NavLink>
           <NavLink
-            to="/journal"
+            to="/addmedicine"
             className="bg-white w-[210px] pt-1 pb-3 px-3 rounded-xl ml-3"
           >
             <div className="font-semibold text-center text-xl mt-3 mx-2">
@@ -97,7 +97,7 @@ const UserProfile = () => {
             />
           </NavLink>
           <NavLink
-            to="/journal"
+            to="/volunteer"
             className="bg-white w-[210px] pt-1 pb-3 px-3 rounded-xl ml-3"
           >
             <div className="font-semibold text-center text-xl mt-3 mx-2">
