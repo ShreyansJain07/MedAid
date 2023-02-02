@@ -7,6 +7,7 @@ import Donate from "../components/Logged In Contents/Donate";
 import Home from "../components/Logged In Contents/Home";
 import AddMedicine from "../components/Logged In Contents/Medicines/AddMedicine";
 import NGO from "../components/Logged In Contents/NGO";
+import OCR from "../components/Logged In Contents/User/OCR";
 import UserProfile from "../components/Logged In Contents/User/UserProfile";
 import Volunteer from "../components/Logged In Contents/Volunteer";
 import VolunteerDashboard from "../components/Logged In Contents/VolunteerDashboard";
@@ -121,6 +122,11 @@ const Navigation = () => {
                     exact
                     path="/ngo"
                     element={<NGO med={med} setMed={setMed} />}
+                  />
+                  <Route
+                    exact
+                    path="/ocr"
+                    element={<OCR />}
                   />
                   <Route
                     exact
