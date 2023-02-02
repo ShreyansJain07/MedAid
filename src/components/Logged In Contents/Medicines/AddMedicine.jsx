@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 const AddMedicine = ({ med, setMed }) => {
   useEffect(() => {
@@ -50,7 +51,7 @@ const AddMedicine = ({ med, setMed }) => {
                 <div className="text-xs">Name</div>
                 <div className="font-semibold">{item.drugName}</div>
               </div>
-              <div className="bg-white w-8/12">
+              <div className="bg-white w-4/12">
                 <div className="text-xs">Details</div>
                 <div className="font-semibold">{item.highlight}</div>
               </div>
@@ -70,9 +71,16 @@ const AddMedicine = ({ med, setMed }) => {
                 <div className="text-xs">Expiry Date</div>
                 <div className="font-semibold">{item.exp}</div>
               </div>
-              <div className="bg-white w-[100px]">
+              <div className="bg-white w-[100px] mx-3">
                 <div className="text-xs">Days Remaining</div>
                 <div className="font-semibold">{diff(item.exp)}</div>
+              </div>
+              <div className="bg-white w-[100px]">
+                {/* <div className="text-xs">Expiry Date</div>
+                <div className="font-semibold">{item.exp}</div> */}
+                <NavLink to='/ngologin' className="my-auto text-white bg-green-600 p-2 rounded-md">
+                  Add
+                </NavLink>
               </div>
             </div>
           );
