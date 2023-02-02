@@ -64,14 +64,17 @@ const Donate = ({med,setMed}) => {
         className="progress-bar sticky z-30 top-0 left-0 right-0 h-[10px] origin-left bg-green-600"
         style={{ scaleX: scrollYProgress }}
       />
+      <div className="bg-gray-200">
+
+      
       <div className="min-h-screen p-16">
         <div className="flex flex-row">
-          <div>
-            <div className="text-green-600 p-4 text-8xl font-semibold">
+          <div className="bg-white h-[70vh] p-5 rounded-3xl shadow-xl">
+            <div className="text-green-800 p-4 text-8xl font-semibold font-sans">
               Ready to donate?
             </div>
             <div className="leading-loose mt-16 text-2xl">
-              <div className="text-left font-sans font-lg text-3xl">
+              <div className="text-left font-sans text-gray-700 font-medium text-3xl ml-5">
                 Donated medicine must meet ALL of these criteria:
               </div>
               <br />
@@ -146,24 +149,28 @@ const Donate = ({med,setMed}) => {
             />
           </div>
         </div>
-
-        <div>
-          <div className="text-left p-2.5 text-2xl">My Name</div>
+        <div className="flex flex-row container bg-white p-5 mx-auto rounded-3xl shadow-xl" >
+        <h1 class="title-font text-6xl font-medium text-gray-800 font-semibold my-auto">
+                    First, some information about you.
+                  </h1>
+        <div className="">
+          <div className="text-left p-5 text-2xl">My Name</div>
           <div className="flex flex-row">
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
               type="name"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[50vw] h-[7vh] p-2.5"
-              placeholder="First"
+              className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[40vw] h-[7vh] p-2.5 outline-none"
+              placeholder="First and Last Name"
             />
+
           </div>
-          <div className="text-left p-2.5 text-2xl">My Email</div>
+          <div className="text-left p-5 text-2xl">My Email</div>
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
-            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-full h-[7vh] p-2.5"
+            className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[40vw] h-[7vh] p-2.5 outline-none"
             placeholder="Enter email here"
           />
           <div className="text-left p-2.5 text-2xl">My Address</div>
@@ -171,7 +178,7 @@ const Donate = ({med,setMed}) => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             type="text"
-            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-full h-[7vh] p-2.5"
+            className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[40vw] h-[7vh] p-2.5 outline-none"
             placeholder="Address Line 1"
           />
           <div className="flex flex-row">
@@ -179,48 +186,49 @@ const Donate = ({med,setMed}) => {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               type="text"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5"
+              className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[13.3vw] h-[7vh] p-2.5 outline-none"
               placeholder="City"
             />
             <input
               value={state}
               onChange={(e) => setState(e.target.value)}
               type="text"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5"
+              className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[13.3vw] h-[7vh] p-2.5 outline-none"
               placeholder="State"
             />
             <input
               type="text"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[13vw] h-[7vh] p-2.5"
+              className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[13.3vw] h-[7vh] p-2.5 outline-none"
               placeholder="Zipcode"
             />
           </div>
         </div>
+        </div>
+        
         <br />
-        <br />
-        <div className="bg-gray-300 rounded-xl p-5">
-          <div className="font-bold my-4 text-green-600 text-4xl">
-            List of Donated Medicine
+        <div className="container bg-white shadow-xl rounded-3xl mx-auto p-5">
+          <div className="font-bold my-4 text-gray-800 text-4xl">
+            Now, enter the details of the medicine you want to donate.
           </div>
           <div className="p-2.5 text-left flex flex-row">
             
             <div className="w-full">
-              <div className="ml-1">Drug Name and Strength</div>
+              <div className="text-left p-2.5 text-2xl">Drug Name and Strength</div>
               <input
                 value={drugName}
                 onChange={(e) => setDrugName(e.target.value)}
                 type="text"
-                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
+                className="bg-gray-200 border-4 border-gray-200 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                 placeholder="Enter drug name..."
               />
             </div>
             <div className="w-full">
-              <div className="ml-1">Expiration Date</div>
+              <div className="text-left p-2.5 text-2xl">Expiration Date</div>
               <input
                 value={exp}
                 onChange={(e) => setExp(e.target.value)}
                 type="date"
-                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
+                className="bg-gray-200 border-4 border-gray-200 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                 placeholder=""
                 onClick={()=> setMedClicked(!medClicked)}
               />
@@ -228,10 +236,10 @@ const Donate = ({med,setMed}) => {
           </div>
           <div className="p-2.5 text-left flex flex-row">
             <div className="w-full">
-              <div className="ml-1">Medicine Type</div>
+              <div className="text-left p-2.5 text-2xl">Medicine Type</div>
               <div className="relative w-full flex items-center">
                 <input
-                  className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
+                  className="bg-gray-200 border-4 border-gray-200 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                   type="text"
                   value={qtySelected}
                   readOnly
@@ -259,7 +267,7 @@ const Donate = ({med,setMed}) => {
                 </button>
                 {isOpen && (
                   <ul
-                    className="absolute z-10 mt-48 left-0 bg-white rounded-lg shadow py-2 transform transition duration-200 ease-out"
+                    className="absolute z-10 mt-48 left-0 bg-white rounded-lg shadow py-2 transform transition-transform duration-200 ease-out"
                     style={{
                       transform: "scaleY(1)",
                     }}
@@ -297,12 +305,12 @@ const Donate = ({med,setMed}) => {
               </div>
             </div>
             <div className="w-full">
-              <div className="ml-1">Qty</div>
+              <div className="text-left p-2.5 text-2xl">Qty</div>
               <input
                 value={qty}
                 onChange={(e) => setQty(e.target.value)}
                 type="text"
-                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
+                className="bg-gray-200 border-4 border-gray-200 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                 placeholder="Name"
               />
             </div>
@@ -314,6 +322,7 @@ const Donate = ({med,setMed}) => {
         >
           Submit
         </button>
+      </div>
       </div>
     </div>
   );

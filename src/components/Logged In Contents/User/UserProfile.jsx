@@ -105,7 +105,7 @@ const UserProfile = () => {
             </div>
             <img
               className="object-contain mx-auto h-[170px] cursor-pointer"
-              src="https://static.vecteezy.com/system/resources/previews/003/098/607/non_2x/cartoon-cute-delivery-man-with-uniform-giving-parcel-to-woman-customer-vector.jpg"
+              src="https://kalamfoundation.org/wp-content/uploads/2021/05/people-volunteering-donating-money_53876-43052.jpg"
               alt=""
             />
           </NavLink>
