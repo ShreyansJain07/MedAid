@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion, useScroll } from "framer-motion";
 import OCR from "./User/OCR";
+import { useNavigate } from "react-router";
 
 const Donate = ({ med, setMed }) => {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -328,7 +331,11 @@ const Donate = ({ med, setMed }) => {
           </div>
           <button
             className="bg-green-600 mt-16 font-semibold rounded-xl hover:bg-green-700 transition ease-in text-white px-6 py-3"
-            onClick={() => setClicked(!clicked)}
+            onClick={() => {
+              setClicked(!clicked);
+              window.confirm("Success");
+              navigate("/userprofile");
+            }}
           >
             Submit
           </button>

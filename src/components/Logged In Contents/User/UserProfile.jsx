@@ -72,7 +72,7 @@ const UserProfile = () => {
         <div className="flex flex-row w-full">
           <NavLink
             to="/donate"
-            className="bg-white w-full pt-1 pb-3 px-3 rounded-xl ml-3"
+            className="bg-white w-full pt-1 pb-3 px-3 rounded-xl"
           >
             <div className="font-semibold text-center text-xl mt-3 mx-2">
               Donate
@@ -110,15 +110,28 @@ const UserProfile = () => {
             />
           </NavLink>
           <NavLink
-            to="/volunteer"
+            to="/home"
             className="bg-white w-full pt-1 pb-3 px-3 rounded-xl ml-3"
           >
             <div className="font-semibold text-center text-xl mt-3 mx-2">
-              Volunteer
+              Community
             </div>
             <img
               className="object-contain mx-auto h-[170px] cursor-pointer"
               src="https://img.freepik.com/free-vector/community-concept-illustration_114360-1021.jpg?w=2000"
+              alt=""
+            />
+          </NavLink>
+          <NavLink
+            to="/requestmedicine"
+            className="bg-white w-full pt-1 pb-3 px-3 rounded-xl ml-3"
+          >
+            <div className="font-semibold text-center text-xl mt-3 mx-2">
+              Request Medicines
+            </div>
+            <img
+              className="object-contain mx-auto h-[120px] cursor-pointer"
+              src="https://media.istockphoto.com/id/1170195097/vector/doctor-and-nurse-presenting-new-drugs-illustration.jpg?s=612x612&w=0&k=20&c=pmLB0WW4hbKJR68axBanh6xwlWwZB_v9BumNjsFI1Bs="
               alt=""
             />
           </NavLink>

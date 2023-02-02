@@ -98,7 +98,7 @@ const LandingPage = () => {
           </div>
           <section className="flex flex-row p-2.5 bg-green-100 min-h-[80vh]">
             <div className="shadow-2xl mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-4xl text-green-600 font-bold mt-32">10 years</div>
+              <div className="text-4xl text-green-600 font-bold mt-14">10 years</div>
               <br />
               
               <div className="p-5 text-2xl text-gray-600 font-semibold">
@@ -106,7 +106,7 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="shadow-2xl mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-4xl text-green-600 font-bold mt-32">
+              <div className="text-4xl text-green-600 font-bold mt-14">
                 10,000+ reviews
               </div>
               <br/>
@@ -115,14 +115,14 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="shadow-2xl mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-4xl text-green-600 font-bold mt-32">Hundreds</div>
+              <div className="text-4xl text-green-600 font-bold mt-14">Hundreds</div>
               <br />
               <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>of verified recommendations by doctors.</p>
               </div>
             </div>
             <div className="shadow-2xl mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-4xl text-green-600 font-bold  mt-32">12</div>
+              <div className="text-4xl text-green-600 font-bold  mt-14">12</div>
               <br /> 
               <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>awards given to the website for efficient design.</p>
