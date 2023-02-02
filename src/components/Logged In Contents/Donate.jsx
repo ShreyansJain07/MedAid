@@ -58,7 +58,7 @@ const Donate = () => {
               <br />
               <div className="flex flex-row">
                 <input
-                  className="my-auto w-5 h-5 mx-3"
+                  className="my-auto accent-green-600 w-5 h-5 mx-3"
                   type="checkbox"
                   name=""
                   id=""
@@ -69,7 +69,7 @@ const Donate = () => {
               </div>
               <div className="flex flex-row">
                 <input
-                  className="my-auto w-5 h-5 mx-3"
+                  className="my-auto accent-green-600 w-5 h-5 mx-3"
                   type="checkbox"
                   name=""
                   id=""
@@ -80,7 +80,7 @@ const Donate = () => {
               </div>
               <div className="flex flex-row">
                 <input
-                  className="my-auto w-5 h-5 mx-3"
+                  className="my-auto accent-green-600 w-5 h-5 mx-3"
                   type="checkbox"
                   name=""
                   id=""
@@ -91,7 +91,7 @@ const Donate = () => {
               </div>
               <div className="flex flex-row">
                 <input
-                  className="my-auto w-5 h-5 mx-3"
+                  className="my-auto accent-green-600 w-5 h-5 mx-3"
                   type="checkbox"
                   name=""
                   id=""
@@ -100,7 +100,7 @@ const Donate = () => {
               </div>
               <div className="flex flex-row">
                 <input
-                  className="my-auto w-5 h-5 mx-3"
+                  className="my-auto accent-green-600 w-5 h-5 mx-3"
                   type="checkbox"
                   name=""
                   id=""
@@ -192,8 +192,8 @@ const Donate = () => {
               <div>Formatted NDC</div>
               <input type="text" className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5" placeholder="" />
             </div> */}
-            <div>
-              <div>Drug Name and Strength</div>
+            <div className="w-full">
+              <div className="ml-1">Drug Name and Strength</div>
               <input
                 value={drugName}
                 onChange={(e) => setDrugName(e.target.value)}
@@ -202,8 +202,8 @@ const Donate = () => {
                 placeholder="Enter drug name..."
               />
             </div>
-            <div>
-              <div>Expiration Date</div>
+            <div className="w-full">
+              <div className="ml-1">Expiration Date</div>
               <input
                 value={exp}
                 onChange={(e) => setExp(e.target.value)}
@@ -213,66 +213,78 @@ const Donate = () => {
               />
             </div>
           </div>
-          <div className="p-2.5 flex flex-row">
-            {/* <div>
-              <div>Qty Type</div>
-              <input type="text" className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5" placeholder="Name" />
-            </div> */}
-            <div className="relative flex">
-              <input
-                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
-                type="text"
-                value={qtySelected}
-                readOnly
-                onChange={(e) => setQtySelectedValue(e.target.value)}
-                placeholder="select from dropdown"
-              />
-              <button
-                className="bg-white rounded-lg shadow p-2 text-gray-700"
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                ⬇
-              </button>
-              {isOpen && (
-                <ul
-                  className="absolute z-10 mt-2 left-0 bg-white rounded-lg shadow py-2 transform transition duration-200 ease-out"
-                  style={{
-                    transform: "scaleY(1)",
-                  }}
+          <div className="p-2.5 text-left flex flex-row">
+            <div className="w-full">
+              <div className="ml-1">Medicine Type</div>
+              <div className="relative w-full flex items-center">
+                <input
+                  className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
+                  type="text"
+                  value={qtySelected}
+                  readOnly
+                  onChange={(e) => setQtySelectedValue(e.target.value)}
+                  placeholder="select from dropdown"
+                />
+                <button
+                  className="bg-white rounded-lg shadow h-[50px] p-2 text-gray-700"
+                  onClick={() => setIsOpen(!isOpen)}
                 >
-                  <li
-                    className="px-4 py-2 hover:bg-gray-200"
-                    onClick={() => handleOptionClick("Pills")}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 stroke-green-600"
                   >
-                    Pills(Tablets,Capsules,etc)
-                  </li>
-                  <li
-                    className="px-4 py-2 hover:bg-gray-200"
-                    onClick={() => handleOptionClick("Mililitres")}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </button>
+                {isOpen && (
+                  <ul
+                    className="absolute z-10 mt-48 left-0 bg-white rounded-lg shadow py-2 transform transition duration-200 ease-out"
+                    style={{
+                      transform: "scaleY(1)",
+                    }}
                   >
-                    Mililitres(Liquid,Solutions,etc)
-                  </li>
-                  <li
-                    className="px-4 py-2 hover:bg-gray-200"
-                    onClick={() => handleOptionClick("Tubes")}
+                    <li
+                      className="px-4 cursor-pointer py-2 hover:bg-green-200"
+                      onClick={() => handleOptionClick("Pills")}
+                    >
+                      Pills(Tablets,Capsules,etc)
+                    </li>
+                    <li
+                      className="px-4 cursor-pointer py-2 hover:bg-green-200"
+                      onClick={() => handleOptionClick("Mililitres")}
+                    >
+                      Mililitres(Liquid,Solutions,etc)
+                    </li>
+                    <li
+                      className="px-4 cursor-pointer py-2 hover:bg-green-200"
+                      onClick={() => handleOptionClick("Tubes")}
+                    >
+                      Tubes
+                    </li>
+                  </ul>
+                )}
+                {!isOpen && (
+                  <ul
+                    className="absolute z-10 mt-2 left-0 bg-white rounded-lg shadow py-2 transform transition duration-200 ease-out"
+                    style={{
+                      transform: "scaleY(0)",
+                    }}
                   >
-                    Tubes
-                  </li>
-                </ul>
-              )}
-              {!isOpen && (
-                <ul
-                  className="absolute z-10 mt-2 left-0 bg-white rounded-lg shadow py-2 transform transition duration-200 ease-out"
-                  style={{
-                    transform: "scaleY(0)",
-                  }}
-                >
-                  <li />
-                </ul>
-              )}
+                    <li />
+                  </ul>
+                )}
+              </div>
             </div>
-            <div>
-              <div>Qty</div>
+            <div className="w-full">
+              <div className="ml-1">Qty</div>
               <input
                 value={qty}
                 onChange={(e) => setQty(e.target.value)}
