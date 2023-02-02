@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion, useScroll } from "framer-motion";
+import OCR from "./User/OCR";
 
 const Donate = ({ med, setMed }) => {
   const [name, setName] = useState("");
@@ -97,7 +98,7 @@ const Donate = ({ med, setMed }) => {
                     onClick={handleChange}
                   />
                   <div className="w-fit">
-                    Will not expire for atleast 5 months
+                    Will not expire for atleast 1 month
                   </div>
                 </div>
                 <div className="flex flex-row">
@@ -314,11 +315,17 @@ const Donate = ({ med, setMed }) => {
                 <input
                   value={qty}
                   onChange={(e) => setQty(e.target.value)}
-                  type="text"
+                  type="number"
                   className="bg-gray-200 border-4 border-gray-200 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                   placeholder="Name"
                 />
               </div>
+            </div>
+            <div>
+              <div className="mt-3 p-2.5 text-2xl">
+                Please upload an image for medicine verification
+              </div>
+              <OCR drugName={drugName} />
             </div>
           </div>
           <button

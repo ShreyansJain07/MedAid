@@ -1,58 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 
 const VolunteerDashboard = () => {
+  const [data, setData] = useState([
+    {
+      drugName: "Dolo650",
+      qty: "2",
+      dAddress: "Good morning this is an adress",
+      rAddress: "Good morning this is a receiver adress",
+    },
+    {
+      drugName: "Dolo2000",
+      qty: "3",
+      dAddress: "Good morning this is an adress",
+      rAddress: "Good morning this is a receiver adress",
+    },
+  ]);
+
   return (
-    <div>
-      VolunteerDashboard
+    <div className="min-h-screen">
+      <div className="text-4xl text-green-600 my-10 font-semibold">
+        Volunteer Dashboard
+      </div>
       {/* // 
       available deliveries
       completed delivery
       */}
       <div>
-        <div></div>
-      </div>
-      <div className="bg-gray-100 min-h-screen">
-        <header className="bg-white">
-          <nav className="flex items-center justify-between px-6 py-4">
-            <div className="text-xl font-bold text-gray-900">
-              Admin Dashboard
-            </div>
-            <div className="flex">
-              <a
-                href="#"
-                className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full"
-              >
-                Logout
-              </a>
-            </div>
-          </nav>
-        </header>
-        <section className="py-20">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <h2 className="text-lg font-medium text-gray-900">
-                  Total Orders
-                </h2>
-                <p className="text-4xl font-bold text-indigo-500 mt-4">500</p>
+        {data.map((item1) => {
+          return (
+            <div className="flex flex-row drop-shadow-xl text-left border-2 p-4 m-4">
+              <div className="w-2/12 px-2">
+                <div className="text-xs">Medicine name</div>
+                <div className="font-semibold text-left">{item1.drugName}</div>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <h2 className="text-lg font-medium text-gray-900">
-                  Total Revenue
-                </h2>
-                <p className="text-4xl font-bold text-indigo-500 mt-4">
-                  $15,000
-                </p>
+              <div className="w-1/12 px-2">
+                <div className="text-xs">Qty</div>
+                <div className="font-semibold text-left">{item1.qty}</div>
               </div>
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <h2 className="text-lg font-medium text-gray-900">
-                  Average Order Value
-                </h2>
-                <p className="text-4xl font-bold text-indigo-500 mt-4">$30</p>
+              <div className="w-4/12 px-2">
+                <div className="text-xs">Donor's Address</div>
+                <div className="font-semibold text-left">{item1.dAddress}</div>
+              </div>
+              <div className="w-4/12 px-2">
+                <div className="text-xs">Receiver's Address</div>
+                <div className="font-semibold text-left">{item1.rAddress}</div>
+              </div>
+              <div className="w-2/12 px-2">
+                <button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 mr-2 stroke-green-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4.5 12.75l6 6 9-13.5"
+                    />
+                  </svg>
+                </button>
+                <button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 stroke-red-600"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
-          </div>
-        </section>
+          );
+        })}
       </div>
     </div>
   );
