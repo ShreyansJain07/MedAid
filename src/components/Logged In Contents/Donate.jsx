@@ -127,14 +127,14 @@ const Donate = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               type="name"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[50vw] h-[7vh] p-2.5"
+              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[50vw] h-[7vh] p-2.5 outline-none"
               placeholder="First"
             />
             <input
               value={last}
               onChange={(e) => setLast(e.target.value)}
               type="text"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[50vw] h-[7vh] p-2.5"
+              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[50vw] h-[7vh] p-2.5 outline-none"
               placeholder="Last"
             />
           </div>
@@ -143,7 +143,7 @@ const Donate = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
-            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-full h-[7vh] p-2.5"
+            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-full h-[7vh] p-2.5 outline-none"
             placeholder="Enter email here"
           />
           <div className="text-left p-2.5 text-2xl">My Address</div>
@@ -151,7 +151,7 @@ const Donate = () => {
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             type="text"
-            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-full h-[7vh] p-2.5"
+            className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-full h-[7vh] p-2.5 outline-none"
             placeholder="Address Line 1"
           />
           <div className="flex flex-row">
@@ -159,19 +159,19 @@ const Donate = () => {
               value={city}
               onChange={(e) => setCity(e.target.value)}
               type="text"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5"
+              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5 outline-none"
               placeholder="City"
             />
             <input
               value={state}
               onChange={(e) => setState(e.target.value)}
               type="text"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5"
+              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5 outline-none"
               placeholder="State"
             />
             <input
               type="text"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5"
+              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5 outline-none"
               placeholder="Zipcode"
             />
           </div>
@@ -198,7 +198,7 @@ const Donate = () => {
                 value={drugName}
                 onChange={(e) => setDrugName(e.target.value)}
                 type="text"
-                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
+                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                 placeholder="Enter drug name..."
               />
             </div>
@@ -208,7 +208,7 @@ const Donate = () => {
                 value={exp}
                 onChange={(e) => setExp(e.target.value)}
                 type="date"
-                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
+                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                 placeholder=""
               />
             </div>
@@ -218,7 +218,7 @@ const Donate = () => {
               <div className="ml-1">Medicine Type</div>
               <div className="relative w-full flex items-center">
                 <input
-                  className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
+                  className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                   type="text"
                   value={qtySelected}
                   readOnly
@@ -289,7 +289,7 @@ const Donate = () => {
                 value={qty}
                 onChange={(e) => setQty(e.target.value)}
                 type="text"
-                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5"
+                className="bg-white border-4 border-gray-300 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                 placeholder="Name"
               />
             </div>
