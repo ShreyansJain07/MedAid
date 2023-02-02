@@ -3,17 +3,18 @@ import React, { useEffect, useState } from "react";
 
 const NGO = ({ med, setMed }) => {
   const [current, setCurrent] = useState("NGO 1");
+  const [reqMed,setReqMed] = useState();
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:5000/getmedicine`)
-  //     .then(function (response) {
-  //       setMed(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/medicinerequests`)
+      .then(function (response) {
+        setReqMed(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   const [curr, setCurr] = useState(true);
   // const [first, setfirst] = useState(second)
