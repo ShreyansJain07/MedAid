@@ -50,15 +50,8 @@ const AddMedicine = ({ med, setMed,selectedDrug,setSelectedDrug }) => {
     const formattedExp = arr[1] + "/" + arr[0] + "/" + arr[2];
     const date1 = new Date(formattedToday);
     const date2 = new Date(formattedExp);
-    console.log('exp');
-    console.log(exp);
-    console.log('first');
-    console.log(date1);
-    console.log('second');
-    console.log(date2);
     const diffTime = Math.abs(date2 - date1);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    console.log(diffDays + "days");
     return diffDays;
   };
 
