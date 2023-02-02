@@ -31,17 +31,17 @@ const Header = () => {
             >
               Home
             </NavLink>
-            <a className="mr-5 text-green-600 hover:text-orange-600">
-              Second Link
-            </a>
-            <a className="mr-5 text-green-600 hover:text-orange-600">
-              Third Link
-            </a>
-            <a className="mr-5 text-green-600 hover:text-orange-600">
-              Fourth Link
-            </a>
+            <NavLink className="mr-5 text-green-600 hover:text-orange-600">
+              Donate
+            </NavLink>
+            <NavLink className="mr-5 text-green-600 hover:text-orange-600">
+              Receive
+            </NavLink>
+            <NavLink className="mr-5 text-green-600 hover:text-orange-600">
+              Contact Us
+            </NavLink>
           </nav>
-          <NavLink
+          {/* <NavLink
             to="/contact"
             className="inline-flex transition ease-in items-center text-white bg-green-600 border-0 py-1 pl-3 pr-2 focus:outline-none hover:bg-orange-600 rounded text-base mt-4 md:mt-0"
           >
@@ -57,7 +57,7 @@ const Header = () => {
             >
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/login"
             className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
