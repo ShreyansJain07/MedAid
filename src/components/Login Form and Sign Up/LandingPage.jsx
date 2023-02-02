@@ -5,14 +5,14 @@ import PacmanLoader from "react-spinners/PacmanLoader";
 const LandingPage = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2300);
+    // setTimeout(() => {
+    setLoading(false);
+    // }, 300);
   }, []);
 
   return (
     <div>
-      {loading && (
+      {/* {loading && (
         <div className="min-h-screen w-[100vw] pt-[30vh] bg-blac">
           <PacmanLoader
             loading={true}
@@ -24,90 +24,74 @@ const LandingPage = () => {
             Loading ...
           </div>
         </div>
-      )}
+      )} */}
       {!loading && (
         <div>
-          <div>LandingPage</div>
-          <NavLink className="bg-red-600 block text-white p-2 m-5" to="/login">
+          {/* <NavLink className="bg-red-600 block text-white p-2 m-5" to="/login">
             Go to Login Page
-          </NavLink>
-          {/* <div>
-            <div className="min-h-screen">
+          </NavLink> */}
+          <div>
+            <div className="min-h-screen bg-[url('https://meditro.themetrades.com/react/static/media/bg1.c53c8971.jpg')]">
               <section class="text-gray-600 body-font">
                 <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                   <div class="lg:flex-grow md:w-1/2 pl-5 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                    <h1 class="text-lg mb-4 ml-2 font-medium text-blue-800">
+                    <h1 class="text-lg mb-4 ml-2 font-medium text-green-700">
                       We Provide All Health Care Solution
                     </h1>
-                    <p class="mb-8 text-4xl font-bold text-blue-600">
+                    <p class="mb-8 text-[45px] font-bold text-green-600">
                       Protect Your Health And Take Care To Of Your Health
                     </p>
                     <div class="flex w-full md:justify-start justify-center items-end">
-                      <button class="inline-flex ml-2 font-semibold text-white bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded text-md">
+                      <NavLink
+                        to="/login"
+                        className="inline-flex transition ease-in ml-2 font-semibold text-white bg-orange-500 border-0 py-3 px-6 focus:outline-none hover:bg-orange-600 rounded text-sm"
+                      >
                         Get Started
-                      </button>
+                      </NavLink>
                     </div>
                   </div>
                   <div class="lg:max-w-lg pr-5 lg:w-full md:w-1/2 w-5/6">
                     <img
-                      class="object-cover object-center rounded"
+                      class="drop-shadow-2xl object-cover object-center rounded"
                       alt="hero"
-                      src="https://dummyimage.com/720x600"
+                      src="http://clipart-library.com/images_k/doctor-transparent-background/doctor-transparent-background-5.png"
                     />
                   </div>
                 </div>
               </section>
             </div>
-          </div> */}
-          <div className="bg-gray-100 min-h-screen">
-            <header className="bg-white">
-              <nav className="flex items-center justify-between px-6 py-4">
-                <div className="text-xl font-bold text-gray-900">
-                  PharmaCare
+          </div>
+          {/* // About us */}
+          <div>
+            <section class="text-gray-600 bg-[url('https://meditro.themetrades.com/react/static/media/bg1.c53c8971.jpg')] body-font">
+              <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+                <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                  <img
+                    class="object-cover object-center rounded"
+                    alt="hero"
+                    src="https://dummyimage.com/720x600"
+                  />
                 </div>
-                <div className="flex">
-                  <a
-                    href="#"
-                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full"
-                  >
-                    Products
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full ml-4"
-                  >
-                    About
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full ml-4"
-                  >
-                    Contact
-                  </a>
-                </div>
-              </nav>
-            </header>
-            <section className="py-20">
-              <div className="container mx-auto">
-                <h1 className="text-5xl font-bold text-center text-gray-900">
-                  Welcome to PharmaCare
-                </h1>
-                <p className="text-xl text-center text-gray-600 mt-4">
-                  Your trusted source for all your pharmaceutical needs.
-                </p>
-                <div className="flex flex-col items-center mt-16">
-                  <a
-                    href="#"
-                    className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full"
-                  >
-                    Browse Products
-                  </a>
-                  <a
-                    href="#"
-                    className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full mt-4"
-                  >
-                    Learn More
-                  </a>
+                <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                  <div className="text-orange-600 font-bold">About Us</div>
+                  <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-green-600">
+                    Medicine centre
+                  </h1>
+                  <p class="mb-8 leading-relaxed">
+                    India's Pharmaceutical industry loses around Rs. 5 billion
+                    annually on account of destruction of expired drugs, hitting
+                    the bottom line of drug manufacturers. MediCare aims to
+                    combat this problem by creating a market for
+                    unused medicines.
+                  </p>
+                  <div class="flex justify-center">
+                    <button class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+                      Button
+                    </button>
+                    <button class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+                      Button
+                    </button>
+                  </div>
                 </div>
               </div>
             </section>
