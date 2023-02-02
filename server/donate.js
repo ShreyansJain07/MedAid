@@ -51,6 +51,10 @@ var userAddress = new mongoose.Schema({
     drugName: String
 })
 
+// const dummy={
+//     userid:{Schema.Types.ObjectId} m//abc
+// }
+
 //Model
 var Medicine = mongoose.model("Medicine", donateSchema);
 var Useraddress = mongoose.model("Useraddress", userAddress);
@@ -95,6 +99,7 @@ app.get("/getmedicine", (req, res)=>{
     let view;
         async function viewMedicines(){
             view = await db.collection('medicines').find().toArray();
+            // view = await db.collection('medicines').find().toArray();.pop
             res.json(view);
         }
     viewMedicines();
