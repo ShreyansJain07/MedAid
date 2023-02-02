@@ -48,7 +48,7 @@ const LandingPage = () => {
                       <br />
                       <NavLink
                         to="/login"
-                        className="shadow-xl inline-flex transition ease-in font-semibold text-2xl text-white bg-green-600 border-0 py-3 px-6 focus:outline-none hover:bg-orange-600 rounded-md"
+                        className="shadow-xl inline-flex transition ease-in font-semibold text-2xl text-white bg-green-600 border-0 py-3 px-6 focus:outline-none hover:bg-green-400 rounded-md"
                       >
                         Get Started
                       </NavLink>
