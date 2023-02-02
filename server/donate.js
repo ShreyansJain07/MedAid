@@ -37,6 +37,7 @@ var donateSchema = new mongoose.Schema({
     city: String,
     drugName: String,
     exp: String,
+    qtySelected: String,
     qty: String,
     snippet: String,
     highlight: String
@@ -49,8 +50,9 @@ let snippet = ''
 let highlight = ''
 
 app.get("/medicine", (req, res)=>{
-    console.log('yoo');
-    requestify.get('https://serpapi.com/search.json?q=dolo+650+details+1mg&location=Maharashtra,+India&hl=hi&gl=in&google_domain=google.co.in&key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2')
+    medName = req.query.query.replace(/ /g,"+");
+    let url = `https://serpapi.com/search.json?q=${medName}+details+1mg&location=Maharashtra,+India&hl=hi&gl=in&google_domain=google.co.in&key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2`;
+    requestify.get(url)
     .then(function(response) {
         snippet = (response.getBody().organic_results[0].snippet);
         highlight = (response.getBody().organic_results[0].snippet_highlighted_words[0]);
@@ -58,22 +60,37 @@ app.get("/medicine", (req, res)=>{
     );
 })
 
+
 app.post("/donate", (req, res) => {
     req.body.snippet = snippet;
     req.body.highlight = highlight;
-
-  var myData = new Medicine(req.body);
-  console.log(myData);
-  myData
+    let date = req.body.exp
+    date = date.replace(/-/g, "/")
+    date = date.split("/").reverse().join("/")
+    req.body.exp = date
+    
+    var myData = new Medicine(req.body);
+    console.log(myData);
+    myData
     .save()
     .then(() => {
-      console.log("done");
-      res.send("This data has been saved to the database");
+        console.log("done");
+        res.send("This data has been saved to the database");
     })
     .catch(() => {
-      console.log("not done");
-      res.status(400).send("Item was not saved to the database");
+        console.log("not done");
+        res.status(400).send("Item was not saved to the database");
     });
 });
+
+app.get("/getmedicine", (req, res)=>{
+    let view;
+        async function viewMedicines(){
+            view = await db.collection('medicines').find().toArray();
+            console.log(view);
+            res.json(view);
+        }
+    viewMedicines();
+})
 
 app.listen(port, () => console.log("Connected to port " + port));
