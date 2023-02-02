@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const About = () => {
+  
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <header className="bg-white p-6">
