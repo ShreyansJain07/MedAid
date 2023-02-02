@@ -17,11 +17,21 @@ const Volunteer = () => {
   useEffect(() => {
     if (name && email && phone && address) {
       console.log(name, email);
-      axios.post("https://localhost:5000/contact", {
+      axios.post("http://localhost:5000/volunteer", {
         name: name,
         email: email,
         phone: phone,
         address: address,
+      })
+      .then(async (response) => {
+        // alert('Submitted')
+        // setName("")
+        // setEmail("")
+        // setMessage("")
+        console.log('then');
+      })
+      .catch((error) => {
+        console.log(error);
       });
     }
   }, [clicked]);

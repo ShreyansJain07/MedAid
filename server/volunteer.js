@@ -31,19 +31,20 @@ var authSchema = new mongoose.Schema({
 //Model
 var Log = mongoose.model("Log", authSchema);
 
-app.post("/signup", (req, res) => {
+app.post("/volunteer", (req, res) => {
   console.log(req.body);
-  var myData = new Log(req.body);
-  myData
-    .save()
-    .then(() => {
-      console.log("done");
-      res.send("This data has been saved to the database");
-    })
-    .catch(() => {
-      console.log("not done");
-      res.status(400).send("Item was not saved to the database");
-    });
+  console.log('hii');
+//   var myData = new Log(req.body);
+//   myData
+//     .save()
+//     .then(() => {
+//       console.log("done");
+//       res.send("This data has been saved to the database");
+//     })
+//     .catch(() => {
+//       console.log("not done");
+//       res.status(400).send("Item was not saved to the database");
+//     });
 });
 
 // app.post("/login", (req, res) => {
