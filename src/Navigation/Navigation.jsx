@@ -5,6 +5,7 @@ import AdminHome from "../components/Admin Logged In Contents/AdminHome";
 import Contact from "../components/Logged In Contents/Contact";
 import Donate from "../components/Logged In Contents/Donate";
 import Home from "../components/Logged In Contents/Home";
+import AddMedicine from "../components/Logged In Contents/Medicines/AddMedicine";
 import NGO from "../components/Logged In Contents/NGO";
 import UserProfile from "../components/Logged In Contents/User/UserProfile";
 import Volunteer from "../components/Logged In Contents/Volunteer";
@@ -66,6 +67,7 @@ const Navigation = () => {
                   <Route exact path="/donate" element={<Donate />} />
                   <Route exact path="/volunteer" element={<Volunteer />} />
                   <Route exact path="/ngo" element={<NGO />} />
+                  <Route exact path="/addmedicine" element={<AddMedicine />} />
                   <Route exact path="/userprofile" element={<UserProfile />} />
                   <Route
                     exact
