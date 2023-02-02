@@ -26,10 +26,10 @@ const Header = () => {
           </NavLink>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
             <NavLink
-              to="/community2"
+              to="/userprofile"
               className="mr-5 hover:text-orange-600 text-green-600"
             >
-              Home
+              Profile
             </NavLink>
             <NavLink
               to="/donate"
@@ -44,17 +44,24 @@ const Header = () => {
               Volunteer
             </NavLink>
             <NavLink
+              to="/home"
+              className="mr-5 hover:text-orange-600 text-green-600"
+            >
+              Community
+            </NavLink>
+            <NavLink
               to="/contact"
               className="mr-5 hover:text-orange-600 text-green-600"
             >
               Contact Us
             </NavLink>
           </nav>
-          {/* <NavLink
-            to="/contact"
+          <NavLink
+            // to="/contact"
+            to="/login"
             className="inline-flex transition ease-in items-center text-white bg-green-600 border-0 py-1 pl-3 pr-2 focus:outline-none hover:bg-orange-600 rounded text-base mt-4 md:mt-0"
           >
-            Contact Us
+            Login
             <svg
               fill="none"
               stroke="currentColor"
@@ -66,8 +73,8 @@ const Header = () => {
             >
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
-          </NavLink> */}
-          <NavLink
+          </NavLink>
+          {/* <NavLink
             to="/login"
             className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
           >
@@ -83,7 +90,7 @@ const Header = () => {
             >
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/"
             className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"

@@ -77,7 +77,7 @@ const LandingPage = () => {
                   />
                 </div>
                 <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                  <h1 class="title-font text-6xl mb-4 font-medium text-orange-500">
+                  <h1 class="title-font text-6xl mb-4 font-medium text-white">
                     About Us
                   </h1>
                   <p class="mb-8 text-2xl text-white leading-relaxed">
@@ -98,33 +98,33 @@ const LandingPage = () => {
           </div>
           <section className="flex flex-row p-2.5 bg-green-100 min-h-[80vh]">
             <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-6xl text-green-600 font-bold">10 years</div>
+              <div className="text-4xl text-green-600 font-bold">10 years</div>
               <br />
               <br />
-              <div className="p-5 text-4xl text-gray-600 font-semibold">
+              <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>of serving your medical needs and helping out NGOs.</p>
               </div>
             </div>
             <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-6xl text-green-600 font-bold">
+              <div className="text-4xl text-green-600 font-bold">
                 10,000+ reviews
               </div>
-              <div className="p-5 text-4xl text-gray-600 font-semibold">
+              <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>by satisfied customers and volunteers.</p>
               </div>
             </div>
             <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-6xl text-green-600 font-bold">Hundreds</div>
+              <div className="text-4xl text-green-600 font-bold">Hundreds</div>
               <br />
               <br />
-              <div className="p-5 text-4xl text-gray-600 font-semibold">
+              <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>of verified recommendations by doctors.</p>
               </div>
             </div>
             <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-6xl text-green-600 font-bold">12</div>
+              <div className="text-4xl text-green-600 font-bold">12</div>
               <br /> <br />
-              <div className="p-5 text-4xl text-gray-600 font-semibold">
+              <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>awards given to the website for efficient design.</p>
               </div>
             </div>
