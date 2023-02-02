@@ -110,8 +110,37 @@ const UserProfile = () => {
             />
           </NavLink>
         </div>
+        <br/>
+        <div className="bg-white min-h-[187px] mb-3 p-3 rounded-xl">
+          
+            {/* <div className="font-semibold text-xl">Upcoming NGO Events:</div>
+            <div className="flex flex-row justify-between text-xl mb-1">
+              <div className="container bg-green-200 border-4 p-5 rounded-2xl border-white">
+                <div className="text-2xl font-semibold">
+                Health Camp
+                  </div>
+                  <div className="text-left text-xl">
+                    Enroll for a free health camp today and get a free basic health checkup.
+
+                  </div>
+
+                
+              </div>
+              <div className="container bg-green-200 border-4 p-5 rounded-2xl border-white">
+                Volunteering
+              </div>
+              <div className="container bg-green-200 border-4 p-5 rounded-2xl border-white">
+                Medical Awareness Seminar
+                <p className="text-left">
+                Hello world
+                </p>
+              </div> */}
+
+          </div>
+          {/* <Task currentCoins={currentCoins} setCurrentCoins={setCurrentCoins} /> */}
+        </div>
       </div>
-    </div>
+    //</div>
   );
 };
 
