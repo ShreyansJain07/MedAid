@@ -6,7 +6,10 @@ const Header = () => {
     <div>
       <header className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <NavLink to='/home' className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <NavLink
+            to="/home"
+            className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -19,17 +22,28 @@ const Header = () => {
             >
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
-            <span className="ml-3 text-xl">BillaWebsite</span>
+            <span className="ml-3 text-green-600 text-xl">MediCare</span>
           </NavLink>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <NavLink to='/community2' className="mr-5 hover:text-gray-900">Community</NavLink>
-            <a className="mr-5 hover:text-gray-900">Second Link</a>
-            <a className="mr-5 hover:text-gray-900">Third Link</a>
-            <a className="mr-5 hover:text-gray-900">Fourth Link</a>
+            <NavLink
+              to="/community2"
+              className="mr-5 text-green-600 hover:text-orange-600"
+            >
+              Home
+            </NavLink>
+            <a className="mr-5 text-green-600 hover:text-orange-600">
+              Second Link
+            </a>
+            <a className="mr-5 text-green-600 hover:text-orange-600">
+              Third Link
+            </a>
+            <a className="mr-5 text-green-600 hover:text-orange-600">
+              Fourth Link
+            </a>
           </nav>
           <NavLink
             to="/contact"
-            className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+            className="inline-flex transition ease-in items-center text-white bg-green-600 border-0 py-1 pl-3 pr-2 focus:outline-none hover:bg-orange-600 rounded text-base mt-4 md:mt-0"
           >
             Contact Us
             <svg
@@ -38,7 +52,7 @@ const Header = () => {
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              className="w-4 h-4 ml-1"
+              className="w-5 h-5 p-1 ml-2 bg-white rounded-sm stroke-green-600"
               viewBox="0 0 24 24"
             >
               <path d="M5 12h14M12 5l7 7-7 7"></path>
