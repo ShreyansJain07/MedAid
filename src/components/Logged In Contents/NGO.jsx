@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 
-const NGO = () => {
+const NGO = ({med,setMed}) => {
 
   const [current,setCurrent] = useState("NGO 1")
   return (

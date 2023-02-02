@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion, useScroll } from "framer-motion";
 
-const Donate = () => {
+const Donate = ({med,setMed}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -29,7 +29,7 @@ const Donate = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/medicine?query=dolo650`)
+      .get(`http://localhost:5000/medicine?query=${drugName}`)
       // .get(
       //   `https://serpapi.com/search.json?q=dolo+650+details+1mg&location=Maharashtra,+India&hl=hi&gl=in&google_domain=google.co.in&key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2`
       // )
@@ -39,7 +39,7 @@ const Donate = () => {
       .catch(function (error) {
         console.log(error);
       });
-  }, []);
+  }, [clicked]);
 
   useEffect(() => {
     if (name && email && address && city && drugName && exp && qty) {
@@ -52,6 +52,7 @@ const Donate = () => {
         drugName: drugName,
         exp: exp,
         qty: qty,
+        qtySelected:qtySelected
       });
     }
   }, [clicked]);
