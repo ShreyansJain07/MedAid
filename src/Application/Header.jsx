@@ -34,6 +34,12 @@ const Header = () => {
               Volunteer
             </NavLink>
             <NavLink
+              to="/ngo"
+              className="mr-5 hover:text-orange-600 text-green-600"
+            >
+              NGOs
+            </NavLink>
+            <NavLink
               to="/home"
               className="mr-5 hover:text-orange-600 text-green-600"
             >
