@@ -5,6 +5,7 @@ import AdminHome from "../components/Admin Logged In Contents/AdminHome";
 import Contact from "../components/Logged In Contents/Contact";
 import Donate from "../components/Logged In Contents/Donate";
 import Home from "../components/Logged In Contents/Home";
+import AddMedicine from "../components/Logged In Contents/Medicines/AddMedicine";
 import NGO from "../components/Logged In Contents/NGO";
 import UserProfile from "../components/Logged In Contents/User/UserProfile";
 import Volunteer from "../components/Logged In Contents/Volunteer";
@@ -48,6 +49,53 @@ const Navigation = () => {
     [AdminPassword]
   );
 
+  const med1 = [
+    {
+      name: "Dolo 650",
+      exp: "30122023",
+      details: "Used to treat fever and other bacterial infections",
+      qty: "2",
+      qtyType: "Pills",
+    },
+    {
+      name: "Crocin",
+      exp: "25042024",
+      details: "Used to treat fever and other bacterial infections",
+      qty: "3",
+      qtyType: "Pills",
+    },
+    {
+      name: "Cheston Cold",
+      exp: "25062025",
+      details: "Used to treat cold and cough",
+      qty: "2",
+      qtyType: "Pills",
+    },
+    {
+      name: "Benadyrl",
+      exp: "25052023",
+      details: "Used to treat cough and cold",
+      qty: "1",
+      qtyType: "Mililitres",
+    },
+    {
+      name: "Diabye",
+      exp: "25092024",
+      details: "Used to lower blood sugar",
+      qty: "3",
+      qtyType: "Pills",
+    },
+    {
+      name: "ibuprofin",
+      exp: "25122025",
+      details:
+        "ease mild to moderate pain – such as toothache, migraine and period pain",
+      qty: "1",
+      qtyType: "Pills",
+    },
+  ];
+  const [med, setMed] = useState(med1);
+
   return (
     <div>
       <usernameContext.Provider value={usernameVal}>
@@ -63,9 +111,22 @@ const Navigation = () => {
                   <Route exact path="/signup" element={<SignUpPage />} />
                   <Route exact path="/home" element={<Home />} />
                   <Route exact path="/contact" element={<Contact />} />
-                  <Route exact path="/donate" element={<Donate />} />
+                  <Route
+                    exact
+                    path="/donate"
+                    element={<Donate med={med} setMed={setMed} />}
+                  />
                   <Route exact path="/volunteer" element={<Volunteer />} />
-                  <Route exact path="/ngo" element={<NGO />} />
+                  <Route
+                    exact
+                    path="/ngo"
+                    element={<NGO med={med} setMed={setMed} />}
+                  />
+                  <Route
+                    exact
+                    path="/addmedicine"
+                    element={<AddMedicine med={med} setMed={setMed} />}
+                  />
                   <Route exact path="/userprofile" element={<UserProfile />} />
                   <Route
                     exact

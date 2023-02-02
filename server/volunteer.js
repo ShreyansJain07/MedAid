@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // MONGOOSE
 mongoose.set("strictQuery", true);
-mongoose.connect("mongodb+srv://Rishab829:Kanchan%401@expresstry.wqhmyb0.mongodb.net/prac?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect("mongodb+srv://Rishab829:Kanchan%401@expresstry.wqhmyb0.mongodb.net/hack2?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -23,17 +23,19 @@ db.once("open", function () {
 });
 
 //Schema
-var authSchema = new mongoose.Schema({
-  username: String,
-  password: String,
+var volunteerSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  phone: String,
+  address: String
 });
 
 //Model
-var Log = mongoose.model("Log", authSchema);
+var Volunteer = mongoose.model("Volunteer", volunteerSchema);
 
-app.post("/signup", (req, res) => {
+app.post("/volunteer", (req, res) => {
   console.log(req.body);
-  var myData = new Log(req.body);
+  var myData = new Volunteer(req.body);
   myData
     .save()
     .then(() => {

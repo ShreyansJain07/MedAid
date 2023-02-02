@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion, useScroll } from "framer-motion";
 
-const Donate = () => {
+const Donate = ({med,setMed}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [last, setLast] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
@@ -15,7 +14,8 @@ const Donate = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [qtySelected, setQtySelectedValue] = useState("");
   const [clicked, setClicked] = useState(false);
-  const [checkbox,setCheckbox] = useState(0)
+  const [checkbox,setCheckbox] = useState(0);
+  const [medClicked,setMedClicked] = useState(false)
 
   const handleOptionClick = (value) => {
     setQtySelectedValue(value);
@@ -29,9 +29,23 @@ const Donate = () => {
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
-    if (name && email && last && address && city && drugName && exp && qty) {
+    axios
+      .get(`http://localhost:5000/medicine?query=${drugName}`)
+      // .get(
+      //   `https://serpapi.com/search.json?q=dolo+650+details+1mg&location=Maharashtra,+India&hl=hi&gl=in&google_domain=google.co.in&key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2`
+      // )
+      .then(function (response) {
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, [medClicked]);
+
+  useEffect(() => {
+    if (name && email && address && city && drugName && exp && qty) {
       console.log(name, email);
-      axios.post("https://localhost:5000/contact", {
+      axios.post("http://localhost:5000/donate", {
         name: name,
         email: email,
         address: address,
@@ -39,6 +53,7 @@ const Donate = () => {
         drugName: drugName,
         exp: exp,
         qty: qty,
+        qtySelected:qtySelected
       });
     }
   }, [clicked]);
@@ -221,6 +236,7 @@ const Donate = () => {
                 type="date"
                 className="bg-gray-200 border-4 border-gray-200 text-black-400 text-lg rounded-lg focus:border-green-400 block w-[32vw] h-[7vh] p-2.5 outline-none"
                 placeholder=""
+                onClick={()=> setMedClicked(!medClicked)}
               />
             </div>
           </div>

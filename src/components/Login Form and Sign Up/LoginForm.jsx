@@ -162,7 +162,7 @@ const LoginForm = () => {
         <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
           <section>
             <h3 class="font-bold text-2xl">Welcome to MedAid</h3>
-            <p class="text-gray-600 pt-2">Sign in to your account.</p>
+            <p class="text-gray-600 pt-2">Log in to your account.</p>
           </section>
 
           <section class="mt-10">
@@ -220,7 +220,7 @@ const LoginForm = () => {
                     }
                   }}
                 >
-                  Sign In
+                  Log In
                 </button>
                 <button
                   onClick={() => {
