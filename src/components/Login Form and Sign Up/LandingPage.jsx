@@ -71,16 +71,16 @@ const LandingPage = () => {
               <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
                   <img
-                    class="object-cover object-center shadow-xl rounded-xl h-[40vh] w-[40vw]"
+                    class="object-cover object-center shadow-2xl rounded-3xl h-[40vh] w-[40vw] mt-32"
                     alt="hero"
                     src="https://cdn.dribbble.com/users/1450874/screenshots/14691183/media/f6e87b3caa3bc8ce90dbfb7af515fad6.jpg?compress=1&resize=400x300&vertical=top"
                   />
                 </div>
-                <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                  <h1 class="title-font text-6xl mb-4 font-medium text-white">
+                <div class="mt-32 lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                  <h1 class="title-font text-6xl mb-4 font-medium text-white ml-16">
                     About Us
                   </h1>
-                  <p class="mb-8 text-2xl text-white leading-relaxed">
+                  <p class="mb-8 text-2xl text-white leading-relaxed ml-16">
                     India's Pharmaceutical industry loses around Rs. 5 billion
                     annually on account of destruction of expired drugs, hitting
                     the bottom line of drug manufacturers. MediCare aims to
@@ -88,7 +88,7 @@ const LandingPage = () => {
                     medicines.
                   </p>
                   <div class="flex justify-center">
-                    <button class="shadow-xl ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 hover:text-white font-semibold rounded text-lg duration-500">
+                    <button class="shadow-xl ml-16 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 hover:text-white font-semibold rounded text-lg duration-500">
                       - Learn More -
                     </button>
                   </div>
@@ -97,33 +97,33 @@ const LandingPage = () => {
             </section>
           </div>
           <section className="flex flex-row p-2.5 bg-green-100 min-h-[80vh]">
-            <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-4xl text-green-600 font-bold">10 years</div>
+            <div className="shadow-2xl mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
+              <div className="text-4xl text-green-600 font-bold mt-32">10 years</div>
               <br />
-              <br />
+              
               <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>of serving your medical needs and helping out NGOs.</p>
               </div>
             </div>
-            <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-4xl text-green-600 font-bold">
+            <div className="shadow-2xl mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
+              <div className="text-4xl text-green-600 font-bold mt-32">
                 10,000+ reviews
               </div>
+              <br/>
               <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>by satisfied customers and volunteers.</p>
               </div>
             </div>
-            <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-4xl text-green-600 font-bold">Hundreds</div>
-              <br />
+            <div className="shadow-2xl mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
+              <div className="text-4xl text-green-600 font-bold mt-32">Hundreds</div>
               <br />
               <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>of verified recommendations by doctors.</p>
               </div>
             </div>
-            <div className="mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
-              <div className="text-4xl text-green-600 font-bold">12</div>
-              <br /> <br />
+            <div className="shadow-2xl mt-[20vh] border-green-100 bg-white box-border h-[50vh] w-[25vw] p-4 border-8 rounded-3xl hover:bg-green-200 duration-500">
+              <div className="text-4xl text-green-600 font-bold  mt-32">12</div>
+              <br /> 
               <div className="p-5 text-2xl text-gray-600 font-semibold">
                 <p>awards given to the website for efficient design.</p>
               </div>
