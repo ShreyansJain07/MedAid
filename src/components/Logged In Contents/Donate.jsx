@@ -5,35 +5,41 @@ const Donate = () => {
     <div>
       <div className="min-h-screen p-3">
         <div className="flex flex-row">
-          <div className="w-1/2 p-4 text-8xl font-semibold">
-            Ready to donate?
+          <div>
+            <div className="w-1/2 p-4 text-8xl font-semibold">
+              Ready to donate?
+              <br /><br />
+            </div>
+            <div className="leading-loose text-2xl">
+              <div className="text-left font-sans font-lg text-3xl">Donated medicine must meet ALL of these criteria:</div>
+              <br />
+              <div className="flex flex-row">
+                <input className="w-fit mx-3" type="checkbox" name="" id="" />
+                <div className="w-fit">Is not a controlled Substance (No narcotics or opioids)</div>
+              </div>
+              <div className="flex flex-row">
+                <input className="w-fit mx-3" type="checkbox" name="" id="" />
+                <div className="w-fit">Will not expire for atleast 5 months</div>
+              </div>
+              <div className="flex flex-row">
+                <input className="w-fit mx-3" type="checkbox" name="" id="" />
+                <div className="w-fit">Is in sealed packaging (Standard amber vials not eligible)</div>
+              </div>
+              <div className="flex flex-row">
+                <input className="w-fit mx-3" type="checkbox" name="" id="" />
+                <div className="w-fit">Does not require refrigeration</div>
+              </div>
+              <div className="flex flex-row">
+                <input className="w-fit mx-3" type="checkbox" name="" id="" />
+                <div className="w-fit">Understand that there is a shipping charge</div>
+              </div>
+            </div>
           </div>
-          <div className="w-1/2 p-4">image</div>
+          <div className="w-1/2 p-4">
+            <img src="http://sirum.org/wp-content/uploads/2022/07/globe-hand.png" className="h-auto" alt="..." />
+          </div>
         </div>
-        <div className="leading-loose text-2xl">
-          <div className="text-left font-sans font-medium text-3xl">Donated medicine must meet ALL of these criteria:</div>
-          <br/>
-          <div className="flex flex-row">
-            <input className="w-fit mx-3" type="checkbox" name="" id="" />
-            <div className="w-fit">Is not a controlled Substance (No narcotics or opioids)</div>
-          </div>
-          <div className="flex flex-row">
-            <input className="w-fit mx-3" type="checkbox" name="" id="" />
-            <div className="w-fit">Will not expire for atleast 5 months</div>
-          </div>
-          <div className="flex flex-row">
-            <input className="w-fit mx-3" type="checkbox" name="" id="" />
-            <div className="w-fit">Is in sealed packaging (Standard amber vials not eligible)</div>
-          </div>
-          <div className="flex flex-row">
-            <input className="w-fit mx-3" type="checkbox" name="" id="" />
-            <div className="w-fit">Does not require refrigeration</div>
-          </div>
-          <div className="flex flex-row">
-            <input className="w-fit mx-3" type="checkbox" name="" id="" />
-            <div className="w-fit">Understand that there is a shipping charge</div>
-          </div>
-        </div>
+
         <div>
           <div className="text-left p-2.5 text-2xl">My Name</div>
           <div className="flex flex-row">
@@ -51,7 +57,7 @@ const Donate = () => {
             <input type="text" className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5" placeholder="Zipcode" />
           </div>
         </div>
-        <br/><br/>
+        <br /><br />
         <div className="bg-gray-300 p-3">
           <div className="font-bold text-4xl">List of Donated Medicine</div>
           <div>Item</div>
