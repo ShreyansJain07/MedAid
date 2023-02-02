@@ -19,63 +19,63 @@ const Footer = () => {
           Connect with <br /> us
         </motion.div>
       </div>
-      <footer class="text-gray-600 body-font">
+      <footer class="leading-loose text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">
           <div class="flex flex-wrap md:text-left text-center order-first">
             <div class="lg:w-1/4 md:w-1/2 w-full px-4">
               <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                CATEGORIES
+                Helpful Links:
               </h2>
               <nav class="list-none mb-10">
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">No Fear Act</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Inspector General</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Archives</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Downloadable Databases</a>
                 </li>
               </nav>
             </div>
             <div class="lg:w-1/4 md:w-1/2 w-full px-4">
               <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                CATEGORIES
+                About Us:
               </h2>
-              <nav class="list-none mb-10">
+              <nav class="list-none mb-10 leading-loose">
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Medicare Glossary</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Using this Site</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Plain Writing</a>
                 </li>
               </nav>
             </div>
-            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+            <div class="leading-loose lg:w-1/4 md:w-1/2 w-full px-4">
               <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-                CATEGORIES
+                Take Action:
               </h2>
               <nav class="list-none mb-10">
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">First Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Find care providers</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Second Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Find health and drug plans</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Third Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Talk to someone</a>
                 </li>
                 <li>
-                  <a class="text-gray-600 hover:text-gray-800">Fourth Link</a>
+                  <a class="text-gray-600 hover:text-gray-800">Manage email preferences</a>
                 </li>
               </nav>
             </div>
@@ -89,7 +89,7 @@ const Footer = () => {
                     for="footer-field"
                     class="leading-7 text-sm text-gray-600"
                   >
-                    Placeholder
+                    To get the latest pharma-related news
                   </label>
                   <input
                     type="text"
@@ -98,14 +98,14 @@ const Footer = () => {
                     class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
-                <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                  Button
+                <button class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-#53c271-600 rounded">
+                  SUBSCRIBE
                 </button>
               </div>
               <p class="text-gray-500 text-sm mt-2 md:text-left text-center">
-                Bitters chicharrones fanny pack
+                Don't worry,
                 <br class="lg:block hidden" />
-                waistcoat green juice
+                we won't spam you!
               </p>
             </div>
           </div>
@@ -125,18 +125,10 @@ const Footer = () => {
               >
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
               </svg>
-              <span class="ml-3 text-xl">Tailblocks</span>
+              <span class="ml-3 text-xl">MediCare</span>
             </a>
             <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
-              © 2020 Tailblocks —
-              <a
-                href="https://twitter.com/knyttneve"
-                rel="noopener noreferrer"
-                class="text-gray-600 ml-1"
-                target="_blank"
-              >
-                @knyttneve
-              </a>
+              © 2022-2023 MediCare 
             </p>
             <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
               <a class="text-gray-500">
