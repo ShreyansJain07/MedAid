@@ -189,7 +189,7 @@ const Donate = () => {
             />
             <input
               type="text"
-              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[33vw] h-[7vh] p-2.5"
+              className="bg-gray-300 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[13vw] h-[7vh] p-2.5"
               placeholder="Zipcode"
             />
           </div>
