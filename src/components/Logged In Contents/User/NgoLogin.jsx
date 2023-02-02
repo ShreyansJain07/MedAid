@@ -1,43 +1,34 @@
-import React, { useState, useEffect } from "react";
-import VolunteerDashboard from "./VolunteerDashboard";
-import axios from "axios";
+import React,{useState,useEffect} from 'react'
+import axios from 'axios'
 
-const Volunteer = () => {
-  const [isVol, setIsVol] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [clicked, setClicked] = useState(false);
-  const handleClick = (e) => {
-    setClicked(!clicked);
-    e.preventDefault();
-    setIsVol(true);
-  };
-  useEffect(() => {
-    if (name && email && phone && address) {
-      console.log(name, email);
-      axios.post("http://localhost:5000/volunteer", {
-        name: name,
-        email: email,
-        phone: phone,
-        address: address,
-      })
-      .then(async (response) => {
-        console.log('then');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-    }
-  }, [clicked]);
-  return (
-    <>
-      {!isVol ? (
-        <div className="flex ">
+const NgoLogin = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+    const [clicked, setClicked] = useState(false);
+    useEffect(() => {
+        if (name && email && phone && address) {
+          console.log(name, email);
+          axios.post("http://localhost:5000/userinfo", {
+            name: name,
+            email: email,
+            phone: phone,
+            address: address
+          })
+          .then(async (response) => {
+            console.log('then');
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        }
+      }, [clicked]);
+    return (<>
+    <div className="flex ">
           <div className="md:w-1/2 px-16 py-8">
             <h1 className="text-3xl text-green-600 font-bold mb-4">
-              Volunteer Details
+            Enter the following details to receive orders
             </h1>
             <div className="bg-white px-16 text-left p-4 shadow-xl">
               <form>
@@ -96,7 +87,7 @@ const Volunteer = () => {
                 <button
                   className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                   type="submit"
-                  onClick={handleClick}
+                  onClick={()=>setClicked(!clicked)}
                 >
                   Submit
                 </button>
@@ -105,16 +96,12 @@ const Volunteer = () => {
           </div>
           <div className="md:w-1/2">
             <img
-              src="https://img.freepik.com/free-vector/people-volunteering-donating-money_53876-66111.jpg?w=2000"
+            src="https://img.freepik.com/premium-vector/ngo-nongovernmental-organization-serve-specific-social-template-hand-drawn-illustration_2175-7898.jpg?w=2000"
               alt=""
             />
           </div>
-        </div>
-      ) : (
-        <VolunteerDashboard />
-      )}
-    </>
-  );
-};
+        </div></>
+  )
+}
 
-export default Volunteer;
+export default NgoLogin
