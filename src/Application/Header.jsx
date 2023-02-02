@@ -51,7 +51,7 @@ const Header = () => {
             className="inline-flex transition ease-in items-center text-white bg-green-600 border-0 py-1 pl-3 pr-2 focus:outline-none hover:bg-orange-600 rounded text-base mt-4 md:mt-0"
           >
             Login
-            <svg
+            {/* <svg
               fill="none"
               stroke="currentColor"
               stroke-linecap="round"
@@ -61,7 +61,7 @@ const Header = () => {
               viewBox="0 0 24 24"
             >
               <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
+            </svg> */}
           </NavLink>
           {/* <NavLink
             to="/login"
