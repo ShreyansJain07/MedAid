@@ -1,8 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 const Header = () => {
+  const [clicked, setClicked] = useState(true);
   return (
     <div className="sticky top-0 z-20 bg-white">
       <header className="text-gray-600 body-font">
@@ -45,43 +46,16 @@ const Header = () => {
               Contact Us
             </NavLink>
           </nav>
-          <NavLink
+          {clicked ? <NavLink
             // to="/contact"
             to="/login"
             className="inline-flex transition ease-in items-center text-white bg-green-600 border-0 py-1 pl-3 pr-2 focus:outline-none hover:bg-orange-600 rounded text-base mt-4 md:mt-0"
+            onClick={() => setClicked(!clicked)}
           >
             Login
-            {/* <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              className="w-5 h-5 p-1 ml-2 bg-white rounded-sm stroke-green-600"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg> */}
-          </NavLink>
-          {/* <NavLink
-            to="/login"
-            className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
-          >
-            Login
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              className="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </NavLink> */}
-          <NavLink
+          </NavLink>: <NavLink
             to="/"
+            onClick={() => setClicked(!clicked)}
             className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
           >
             Logout
@@ -96,7 +70,7 @@ const Header = () => {
             >
               <path d="M5 12h14M12 5l7 7-7 7"></path>
             </svg>
-          </NavLink>
+          </NavLink>}
         </div>
       </header>
       <hr />
