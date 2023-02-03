@@ -68,7 +68,7 @@ const AddMedicine = ({ med, setMed,setQty,selectedDrug,setSelectedDrug }) => {
                 <div className="text-xs">Name</div>
                 <div className="font-semibold">{item.drugName}</div>
               </div>
-              <div className="bg-white w-4/12">
+              <div className="bg-white w-5/12">
                 <div className="text-xs">Details</div>
                 <div className="font-semibold">{item.highlight}</div>
               </div>
@@ -84,7 +84,7 @@ const AddMedicine = ({ med, setMed,setQty,selectedDrug,setSelectedDrug }) => {
                 <div className="text-xs">Type</div>
                 <div className="font-semibold">{item.qtySelected}</div>
               </div>
-              <div className="bg-white w-[100px]">
+              <div className="bg-white w-[200px]">
                 <div className="text-xs">Expiry Date</div>
                 <div className="font-semibold">{item.exp}</div>
               </div>
