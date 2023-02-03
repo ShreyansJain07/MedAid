@@ -71,7 +71,16 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
       <div className="bg-gray-200">
         <div className="min-h-screen p-16">
           <div className="flex flex-row">
-            <div className="bg-white h-fit p-5 rounded-3xl shadow-xl">
+            <motion.div
+              initial={{ x: "-100%", opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.3,
+                ease: "easeOut",
+              }}
+              className="bg-white h-fit p-5 rounded-3xl shadow-xl"
+            >
               <div className="text-green-800 p-4 text-7xl font-semibold font-sans">
                 Ready to donate?
               </div>
@@ -148,7 +157,7 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
             <div className="w-1/2 p-4">
               <img
                 src="http://sirum.org/wp-content/uploads/2022/07/globe-hand.png"
@@ -257,7 +266,7 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
                     placeholder="select from dropdown"
                   />
                   <button
-                    className="bg-white rounded-lg shadow h-[50px] p-2 text-gray-700"
+                    className="rounded-lg ml-2 hover:bg-gray-300 transition ease-in bg-gray-200 shadow h-[58px] w-[58px] p-2 text-gray-700"
                     onClick={() => setIsOpen(!isOpen)}
                   >
                     <svg
@@ -266,7 +275,7 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-6 h-6 stroke-green-600"
+                      className="w-6 h-6 mx-auto stroke-green-600"
                     >
                       <path
                         strokeLinecap="round"

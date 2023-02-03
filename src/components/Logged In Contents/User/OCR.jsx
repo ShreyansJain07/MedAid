@@ -30,11 +30,13 @@ const OCR = ({ drugName }) => {
       {/* <p>{text}</p> */}
       {Math.ceil(progressRate.progress * 100) === 100 &&
       text.toLowerCase().includes(drugName.toLowerCase()) ? (
-        <span className="text-green-600">Your medicine is accepted</span>
+        <div className="mt-3 font-bold text-green-600">
+          Your medicine is accepted
+        </div>
       ) : (
-        <span className="text-red-600">
+        <div className="mt-3 font-bold text-red-600">
           The medicine is not matching with current selection
-        </span>
+        </div>
       )}
     </div>
   );

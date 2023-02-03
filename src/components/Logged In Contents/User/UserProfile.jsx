@@ -190,7 +190,7 @@ const UserProfile = () => {
             />
           </NavLink>
         </div>
-        <br />
+        {/* <br />
         <div className="bg-white min-h-[187px] mb-3 p-3 rounded-xl">
           <div className="font-semibold text-xl">Request Medicines</div>
 
@@ -211,8 +211,7 @@ const UserProfile = () => {
               Check Availibility
             </button>
           </div>
-        </div>
-        {/* <Task currentCoins={currentCoins} setCurrentCoins={setCurrentCoins} /> */}
+        </div> */}
       </div>
     </div>
     //</div>
