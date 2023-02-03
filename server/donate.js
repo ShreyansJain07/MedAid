@@ -4,6 +4,7 @@ const path = require("path");
 const cors = require("cors");
 const requestify = require('requestify');
 const session = require('express-session');
+const { Schema } = mongoose;
 const port = 5000;
 
 const app = express();
@@ -59,9 +60,9 @@ var requestMedicine = new mongoose.Schema({
     reqMed: String
 })
 
-// const dummy={
-//     userid:{Schema.Types.ObjectId} m//abc
-// }
+var dummy = new mongoose.Schema({
+    userid: [{type: Schema.Types.ObjectId, ref: Useraddress}]
+})
 
 //Model
 var Medicine = mongoose.model("Medicine", donateSchema);
@@ -70,9 +71,17 @@ var Reqmedicine = mongoose.model("Reqmedicine", requestMedicine);
 
 let snippet = ''
 let highlight = ''
+let arr = []
 
 app.get("/medicine", (req, res)=>{
     medName = req.query.query.replace(/ /g,"+");
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+          item = req.body[key];
+          arr.push(item);
+        }
+      }
+      console.log(arr);
     let url = `https://serpapi.com/search.json?q=${medName}+details+1mg&location=Maharashtra,+India&hl=hi&gl=in&google_domain=google.co.in&key=5d1b79b4ee809fa8365d09f2d36a866dda3b7e1e2f93ad1c59726eff1454f4f2`;
     requestify.get(url)
     .then(function(response) {
@@ -107,9 +116,19 @@ app.post("/donate", (req, res) => {
 app.get("/getmedicine", (req, res)=>{
     let view;
         async function viewMedicines(){
-            view = await db.collection('medicines').find().toArray();
+            // view = await db.collection('medicines').find().toArray();
             // view = await db.collection('medicines').find().toArray();.pop
-            res.json(view);
+            // res.json(view);
+            let med = req.body.drugName
+            Medicine.
+            findOne({ drugName: `${med}` }).
+            populate('dummy').
+            exec(function (err, story) {
+                if (err) return handleError(err);
+                // console.log('The author is %s', story.author.name);
+                console.log('yooooo');
+                // prints "The author is Ian Fleming"
+            });
         }
     viewMedicines();
 })
@@ -124,10 +143,12 @@ app.get("/medicinerequests", (req, res)=>{
 })
 
 app.post("/userinfo", (req, res)=>{
+    let med = req.body.drugName;
     var myData = new Useraddress(req.body);
     console.log(myData);
     myData.save()
     .then(() => {
+        getDummy()
         console.log("done");
         res.send("This data has been saved to the database");
     })
