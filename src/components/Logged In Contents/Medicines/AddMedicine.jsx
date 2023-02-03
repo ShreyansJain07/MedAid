@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
-const AddMedicine = ({ med, setMed,selectedDrug,setSelectedDrug }) => {
+const AddMedicine = ({ med, setMed,setQty,selectedDrug,setSelectedDrug }) => {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/getmedicine`)
@@ -92,7 +92,10 @@ const AddMedicine = ({ med, setMed,selectedDrug,setSelectedDrug }) => {
                 <div className="text-xs">Days Remaining</div>
                 <div className="font-semibold">{diff(item.exp)}</div>
               </div>
-              <div onClick={()=> setSelectedDrug(item.drugName)} className="bg-white my-auto h-fit w-[100px]">
+              <div onClick={()=> {
+                setSelectedDrug(item.drugName)
+                setQty(item.qty)
+                }} className="bg-white my-auto h-fit w-[100px]">
                 {/* <div className="text-xs">Expiry Date</div>
                 <div className="font-semibold">{item.exp}</div> */}
                 <NavLink to='/ngologin' className="text-white bg-green-600 p-2 rounded-md">

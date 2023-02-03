@@ -4,7 +4,7 @@ import { motion, useScroll } from "framer-motion";
 import OCR from "./User/OCR";
 import { useNavigate } from "react-router";
 
-const Donate = ({ med, setMed }) => {
+const Donate = ({ med, setMed,dAdd,setDAdd }) => {
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -183,7 +183,10 @@ const Donate = ({ med, setMed }) => {
               <div className="text-left p-2.5 text-2xl">My Address</div>
               <input
                 value={address}
-                onChange={(e) => setAddress(e.target.value)}
+                onChange={(e) => {
+                  setAddress(e.target.value)
+                  setDAdd(e.target.value)
+                }}
                 type="text"
                 className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[40vw] h-[7vh] p-2.5 outline-none"
                 placeholder="Address Line 1"

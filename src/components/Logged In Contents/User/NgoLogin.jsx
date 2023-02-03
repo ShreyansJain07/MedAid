@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 
-const NgoLogin = ({selectedDrug}) => {
+const NgoLogin = ({selectedDrug,ph,setPh,rAdd,setRAdd}) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -88,7 +88,11 @@ const NgoLogin = ({selectedDrug}) => {
                 <button
                   className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                   type="submit"
-                  onClick={()=>setClicked(!clicked)}
+                  onClick={()=>{
+                    setClicked(!clicked)
+                    setPh(phone)
+                    setRAdd(address)
+                    }}
                 >
                   Submit
                 </button>
