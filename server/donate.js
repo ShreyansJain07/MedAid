@@ -11,8 +11,6 @@ app.use(session({
     secret: '1234567890QWERT',
     resave: true,
     saveUninitialized: false,
-    snippet: '',
-    highlight: ''
 }))
 
 app.use(express.json());
@@ -59,10 +57,6 @@ var requestMedicine = new mongoose.Schema({
     reqMed: String
 })
 
-// const dummy={
-//     userid:{Schema.Types.ObjectId} m//abc
-// }
-
 //Model
 var Medicine = mongoose.model("Medicine", donateSchema);
 var Useraddress = mongoose.model("Useraddress", userAddress);
@@ -108,7 +102,6 @@ app.get("/getmedicine", (req, res)=>{
     let view;
         async function viewMedicines(){
             view = await db.collection('medicines').find().toArray();
-            // view = await db.collection('medicines').find().toArray();.pop
             res.json(view);
         }
     viewMedicines();
@@ -123,7 +116,18 @@ app.get("/medicinerequests", (req, res)=>{
     viewMedicines();
 })
 
+app.get("/donated", (req, res)=>{
+    let view;
+    async function getDonated(){
+        view = await db.collection('medicines').find({"name":`${req.query.name}`}).toArray();
+        // view = await db.collection('medicines').find(`{name: ${req.query.name}}`).toArray();
+        res.json(view);
+    }
+    getDonated()
+})
+
 app.post("/userinfo", (req, res)=>{
+    let med = req.body.drugName;
     var myData = new Useraddress(req.body);
     console.log(myData);
     myData.save()

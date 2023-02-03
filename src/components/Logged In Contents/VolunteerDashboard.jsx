@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-const VolunteerDashboard = () => {
+const VolunteerDashboard = ({selectedDrug,qty,ph,rAdd,dAdd}) => {
   const [data, setData] = useState([
     {
-      drugName: "Dolo650",
-      qty: "2",
-      phone: "9999887676",
-      dAddress: "Good morning this is an adress",
-      rAddress: "Good morning this is a receiver adress",
+      drugName: selectedDrug,
+      qty:qty,
+      phone: ph,
+      dAddress: dAdd,
+      rAddress: rAdd,
     },
     {
       drugName: "Dolo2000",
@@ -17,7 +17,6 @@ const VolunteerDashboard = () => {
       rAddress: "Good morning this is a receiver adress",
     },
   ]);
-
   return (
     <div className="min-h-screen">
       <div className="text-4xl text-green-600 my-10 font-semibold">
