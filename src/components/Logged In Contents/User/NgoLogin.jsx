@@ -1,36 +1,35 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const NgoLogin = ({ selectedDrug, ph, setPh, rAdd, setRAdd }) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-  const [clicked, setClicked] = useState(false);
-  useEffect(() => {
-    if (name && email && phone && address) {
-      console.log(name, email);
-      axios
-        .post("http://localhost:5000/userinfo", {
-          name: name,
-          email: email,
-          phone: phone,
-          address: address,
-          drugName: selectedDrug,
-        })
-        .then(async (response) => {
-          console.log("then");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }, [clicked]);
-  return (
-    <>
-      <div className="flex ">
-        <div className="md:w-1/2 px-16 py-8">
-          <h1 className="text-3xl text-green-600 font-bold mb-4">
+const NgoLogin = ({selectedDrug,ph,setPh,rAdd,setRAdd,qty}) => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [address, setAddress] = useState("");
+    const [clicked, setClicked] = useState(false);
+    useEffect(() => {
+        if (name && email && phone && address) {
+          console.log(name, email);
+          axios.post("http://localhost:5000/userinfo", {
+            name: name,
+            email: email,
+            phone: phone,
+            address: address,
+            qty:qty,
+            drugName:selectedDrug
+          })
+          .then(async (response) => {
+            console.log('then');
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        }
+      }, [clicked]);
+    return (<>
+    <div className="flex ">
+          <div className="md:w-1/2 px-16 py-8">
+            <h1 className="text-3xl text-green-600 font-bold mb-4">
             Enter the following details to receive orders
           </h1>
           <div className="bg-white px-16 text-left p-4 shadow-xl">
