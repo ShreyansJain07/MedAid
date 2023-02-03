@@ -171,8 +171,14 @@ const Navigation = () => {
                       />
                     }
                   />
-                  <Route exact path="/adminhome" element={<AdminHome />} />
-                  <Route exact path="/ngologin" element={<NgoLogin qty={qty} ph={ph} setPh={setPh} rAdd={rAdd} setRAdd={setRAdd} selectedDrug={selectedDrug} setSelectedDrug={setSelectedDrug} />} />
+                  <Route exact path="/adminhome" element={<AdminHome/>}/>
+                  <Route
+                    exact
+                    path="/ngologin"
+                    element={
+                      <NgoLogin/>
+                    }
+                  />
                 </Routes>
               </div>
               {/* </div> */}
