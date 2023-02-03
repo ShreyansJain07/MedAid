@@ -65,7 +65,7 @@ const Donate = ({ med, setMed }) => {
   return (
     <div>
       <motion.div
-        className="progress-bar sticky z-30 top-[91px] left-0 right-0 h-[10px] origin-left bg-green-600"
+        className="progress-bar sticky z-30 top-[73px] left-0 right-0 h-[6px] origin-left bg-green-600"
         style={{ scaleX: scrollYProgress }}
       />
       <div className="bg-gray-200">
