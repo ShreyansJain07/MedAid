@@ -46,7 +46,8 @@ var userAddress = new mongoose.Schema({
     email: String,
     phone: String,
     address: String,
-    drugName: String
+    drugName: String,
+    qty: String
 })
 
 var requestMedicine = new mongoose.Schema({
@@ -75,7 +76,6 @@ app.get("/medicine", (req, res)=>{
     }
     );
 })
-
 app.post("/donate", (req, res) => {
     req.body.snippet = snippet;
     req.body.highlight = highlight;
@@ -83,7 +83,7 @@ app.post("/donate", (req, res) => {
     date = date.replace(/-/g, "/")
     date = date.split("/").reverse().join("/")
     req.body.exp = date
-    
+    console.log('yoop');
     var myData = new Medicine(req.body);
     console.log(myData);
     myData
@@ -126,8 +126,16 @@ app.get("/donated", (req, res)=>{
     getDonated()
 })
 
+app.get("/delivery", (req, res)=>{
+    let view;
+    async function getDelivery(){
+        view = await db.collection('useraddresses').find().toArray();
+        res.json(view);
+    }
+    getDelivery()
+})
+
 app.post("/userinfo", (req, res)=>{
-    let med = req.body.drugName;
     var myData = new Useraddress(req.body);
     console.log(myData);
     myData.save()

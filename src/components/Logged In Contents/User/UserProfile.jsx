@@ -14,12 +14,14 @@ const UserProfile = () => {
     axios
       .get(`http://localhost:5000/donated?name=Krish`)
       .then(function (response) {
-        console.log(response.data);
+        // console.log(response.data);
+        console.log(username);
         setMedarray(response.data);
       })
       .catch(function (error) {
         console.log(error);
       });
+    setUsername(localStorage.getItem("userName"));
   }, []);
 
   return (
@@ -84,7 +86,9 @@ const UserProfile = () => {
       </div>
       <div className="w-3/4 p-3">
         <div className="bg-white min-h-[187px] mb-3 p-3 rounded-xl">
-            <div className="font-semibold text-xl">Medicines donated till now</div>        
+          <div className="font-semibold text-xl">
+            Medicines donated till now
+          </div>
           <div className="font-semibold text-xl mb-1">
             <div className="">
               {medarray.map((item1) => {
@@ -186,7 +190,7 @@ const UserProfile = () => {
             />
           </NavLink>
         </div>
-        <br />
+        {/* <br />
         <div className="bg-white min-h-[187px] mb-3 p-3 rounded-xl">
           <div className="font-semibold text-xl">Request Medicines</div>
 
@@ -207,8 +211,7 @@ const UserProfile = () => {
               Check Availibility
             </button>
           </div>
-        </div>
-        {/* <Task currentCoins={currentCoins} setCurrentCoins={setCurrentCoins} /> */}
+        </div> */}
       </div>
     </div>
     //</div>

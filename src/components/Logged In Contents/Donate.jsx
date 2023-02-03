@@ -336,8 +336,8 @@ const Donate = ({ med, setMed,dAdd,setDAdd }) => {
             className="bg-green-600 mt-16 font-semibold rounded-xl hover:bg-green-700 transition ease-in text-white px-6 py-3"
             onClick={() => {
               setClicked(!clicked);
-              window.confirm("succes");
-              navigate("/userprofile");
+              window.confirm("success");
+              // navigate("/userprofile");
             }}
           >
             Submit

@@ -72,10 +72,10 @@ const AddMedicine = ({ med, setMed,setQty,selectedDrug,setSelectedDrug }) => {
                 <div className="text-xs">Details</div>
                 <div className="font-semibold">{item.highlight}</div>
               </div>
-              <div className="bg-white w-8/12">
+              {/* <div className="bg-white w-8/12">
                 <div className="text-xs">More Details</div>
                 <div className="font-semibold">{item.snippet}</div>
-              </div>
+              </div> */}
               <div className="bg-white w-[90px]">
                 <div className="text-xs">Qty</div>
                 <div className="font-semibold">{item.qty}</div>
