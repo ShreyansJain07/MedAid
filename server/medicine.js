@@ -32,6 +32,4 @@ var authSchema = new mongoose.Schema({
 //Model
 var Log = mongoose.model("Log", authSchema);
 
-
-
 app.listen(port, () => console.log("Connected to port " + port));

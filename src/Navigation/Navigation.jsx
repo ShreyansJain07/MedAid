@@ -171,14 +171,8 @@ const Navigation = () => {
                       />
                     }
                   />
-                  <Route exact path="/adminhome" element={<AdminHome/>}/>
-                  <Route
-                    exact
-                    path="/ngologin"
-                    element={
-                      <NgoLogin/>
-                    }
-                  />
+                  <Route exact path="/adminhome" element={<AdminHome />} />
+                  <Route exact path="/ngologin" element={<NgoLogin />} />
                 </Routes>
               </div>
               {/* </div> */}
