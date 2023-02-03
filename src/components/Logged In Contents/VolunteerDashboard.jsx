@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-const VolunteerDashboard = ({ selectedDrug, qty, ph, rAdd, dAdd }) => {
-  console.log(selectedDrug);
+const VolunteerDashboard = () => {
   const [data, setData] = useState([
     {
       drugName: "Dolo2000",
@@ -10,14 +9,7 @@ const VolunteerDashboard = ({ selectedDrug, qty, ph, rAdd, dAdd }) => {
       phone: "9999887676",
       dAddress: "Good morning this is an adress",
       rAddress: "Good morning this is a receiver adress",
-    },
-    {
-      drugName: selectedDrug,
-      qty: qty,
-      phone: ph,
-      dAddress: dAdd,
-      rAddress: rAdd,
-    },
+    }
   ]);
   useEffect(()=>{
     axios.get('http://localhost:5000/delivery')
@@ -31,7 +23,7 @@ const VolunteerDashboard = ({ selectedDrug, qty, ph, rAdd, dAdd }) => {
   return (
     <div className="min-h-screen">
       <div className="text-4xl text-green-600 my-10 font-semibold">
-        Volunteer Dashboard {dAdd} 
+        Volunteer Dashboard
       </div>
       {/* // 
       available deliveries
