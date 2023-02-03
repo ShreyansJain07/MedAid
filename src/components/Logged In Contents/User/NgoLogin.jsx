@@ -92,6 +92,7 @@ const NgoLogin = ({selectedDrug,ph,setPh,rAdd,setRAdd,qty}) => {
                 onClick={(e) => {
                   e.preventDefault();
                   setClicked(!clicked);
+                  alert("submitted")
                   setPh(phone);
                   setRAdd(address);
                 }}
