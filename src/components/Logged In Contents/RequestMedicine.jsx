@@ -10,6 +10,7 @@ const RequestMedicine = () => {
   const [clicked, setClicked] = useState(false);
   const handleClick = (e) => {
     setClicked(!clicked);
+    alert("submitted")
     e.preventDefault();
   };
   useEffect(() => {
