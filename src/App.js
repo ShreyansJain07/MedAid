@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Navigation />
         <Footer />
-        <VoiceAssistant />
+        {/* <VoiceAssistant /> */}
       </Router>
     </div>
   );
