@@ -6,7 +6,7 @@ const Header = () => {
   const [clicked, setClicked] = useState(true);
   return (
     <div className="sticky top-0 z-20 bg-white">
-      <header className="text-gray-600 body-font">
+      <header className="text-gray-600 body-font shadow-xl">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <NavLink
             to="/"
