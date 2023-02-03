@@ -46,7 +46,8 @@ var userAddress = new mongoose.Schema({
     email: String,
     phone: String,
     address: String,
-    drugName: String
+    drugName: String,
+    qty: String
 })
 
 var requestMedicine = new mongoose.Schema({
@@ -126,8 +127,16 @@ app.get("/donated", (req, res)=>{
     getDonated()
 })
 
+app.get("/delivery", (req, res)=>{
+    let view;
+    async function getDelivery(){
+        view = await db.collection('useraddresses').find().toArray();
+        res.json(view);
+    }
+    getDelivery()
+})
+
 app.post("/userinfo", (req, res)=>{
-    let med = req.body.drugName;
     var myData = new Useraddress(req.body);
     console.log(myData);
     myData.save()

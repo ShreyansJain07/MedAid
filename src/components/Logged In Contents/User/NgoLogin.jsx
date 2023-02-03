@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 
-const NgoLogin = ({selectedDrug,ph,setPh,rAdd,setRAdd}) => {
+const NgoLogin = ({selectedDrug,ph,setPh,rAdd,setRAdd,qty}) => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
@@ -15,6 +15,7 @@ const NgoLogin = ({selectedDrug,ph,setPh,rAdd,setRAdd}) => {
             email: email,
             phone: phone,
             address: address,
+            qty:qty,
             drugName:selectedDrug
           })
           .then(async (response) => {

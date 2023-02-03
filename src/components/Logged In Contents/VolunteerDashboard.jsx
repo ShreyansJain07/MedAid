@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const VolunteerDashboard = ({ selectedDrug, qty, ph, rAdd, dAdd }) => {
   console.log(selectedDrug);
@@ -18,7 +19,15 @@ const VolunteerDashboard = ({ selectedDrug, qty, ph, rAdd, dAdd }) => {
       rAddress: rAdd,
     },
   ]);
-  console.log(dAdd);
+  useEffect(()=>{
+    axios.get('http://localhost:5000/delivery')
+    .then(function (response) {
+      setData(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  },[])
   return (
     <div className="min-h-screen">
       <div className="text-4xl text-green-600 my-10 font-semibold">
@@ -41,12 +50,12 @@ const VolunteerDashboard = ({ selectedDrug, qty, ph, rAdd, dAdd }) => {
                 <div className="font-semibold text-left">{item1.qty}</div>
               </div>
               <div className="w-4/12 px-2">
-                <div className="text-xs">Donor's Address</div>
-                <div className="font-semibold text-left">{item1.dAddress}</div>
+                <div className="text-xs">Receiver's name</div>
+                <div className="font-semibold text-left">{item1.name}</div>
               </div>
               <div className="w-4/12 px-2">
                 <div className="text-xs">Receiver's Address</div>
-                <div className="font-semibold text-left">{item1.rAddress}</div>
+                <div className="font-semibold text-left">{item1.address}</div>
               </div>
               <div className="w-2/12 px-2">
                 <div className="text-xs">Contact info</div>
