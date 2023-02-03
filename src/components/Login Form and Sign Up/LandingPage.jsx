@@ -129,9 +129,40 @@ const LandingPage = () => {
               </div>
             </div>
           </section>
-          <section>
-            <h1 class="title-font sm:text-8xl text-center text-8xl mb-4 font-medium text-green-600">
+          <section className="bg-gray-100 p-5">
+            <h1 class="title-font sm:text-6xl text-center text-6xl mb-8 font-medium text-green-700 p-5">
               How it Works:
+              <div className="flex flex-row space-x-4 mx-auto text-left mt-8">
+                <div className="bg-white shadow-xl rounded-3xl p-5">
+                  1.
+                  <div>
+                  <img src="http://sirum.org/wp-content/uploads/2022/07/hospital-1.png" class="max-w-full h-auto mt-8" alt="..." />
+                  </div>
+                  <div className="text-gray-300 text-xl w-[27vw] mt-12">
+                  Individuals and organizations donate their surplus medicine instead of destroying it.
+                  </div>
+                </div>
+                <div className="bg-white shadow-xl rounded-3xl p-5">
+                  2.
+                  <div>
+                  <img src="https://img.freepik.com/premium-vector/medicine-donation-box-2d-vector-isolated-illustration-medical-supplies-drugs-healthcare-humanitarian-aid-flat-composition-cartoon-background-charity-contribution-colourful-scene_151150-6594.jpg?w=2000" class="w-[40vw] h-auto" alt="..." />
+                  </div>
+                  <div className="text-gray-300 text-xl w-[27vw]">
+                  MedAid matches donated medicine to community partners who need it.
+                  </div>
+                </div>
+                <div className="bg-white shadow-xl rounded-3xl p-5">
+                  3.
+                  <div>
+                  <div>
+                  <img src="http://sirum.org/wp-content/uploads/2022/07/pharm-1.png" class="max-w-full h-auto" alt="..." />
+                  </div>
+                  </div>
+                  <div className="text-gray-300 text-xl w-[27vw]">
+                  Community partners provide donated medicine to patients who otherwise wouldn’t have access.
+                  </div>
+                </div>
+              </div>
             </h1>
           </section>
         </div>
