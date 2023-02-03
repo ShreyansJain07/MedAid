@@ -190,8 +190,32 @@ const UserProfile = () => {
             />
           </NavLink>
         </div>
+        <br />
+        <div className="bg-white min-h-[187px] mb-3 p-3 rounded-xl">
+          <div className="font-semibold text-xl">Request Medicines</div>
+
+          <div className="p-5 space-x-5">
+            <input
+              type="text"
+              className="border-2 p-3 w-[20vw]"
+              placeholder="Enter Name"
+            />
+            <input
+              type="text"
+              className="border-2 p-3 w-[20vw]"
+              placeholder="Enter Name"
+            />
+          </div>
+          <div>
+            <button className="bg-green-600 text-white hover:bg-green-700 font-quicksand transition ease-in rounded-xl font-semibold py-3 px-6">
+              Check Availibility
+            </button>
+          </div>
+        </div>
+        {/* <Task currentCoins={currentCoins} setCurrentCoins={setCurrentCoins} /> */}
       </div>
     </div>
+    //</div>
   );
 };
 

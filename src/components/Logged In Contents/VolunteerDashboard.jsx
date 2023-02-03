@@ -18,10 +18,11 @@ const VolunteerDashboard = ({ selectedDrug, qty, ph, rAdd, dAdd }) => {
       rAddress: rAdd,
     },
   ]);
+  console.log(dAdd);
   return (
     <div className="min-h-screen">
       <div className="text-4xl text-green-600 my-10 font-semibold">
-        Volunteer Dashboard
+        Volunteer Dashboard {dAdd} 
       </div>
       {/* // 
       available deliveries
