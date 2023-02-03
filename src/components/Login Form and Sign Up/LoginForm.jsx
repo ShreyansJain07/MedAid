@@ -211,6 +211,13 @@ const LoginForm = () => {
                   Forgot your password?
                 </a>
               </div>
+              <div
+                onClick={() => navigate("/home")}
+                className="flex flex-row mb-3"
+              >
+                <input type="checkbox" className="accent-green-600" />
+                <div className="ml-3">Are you a doctor?</div>
+              </div>
               <div className="w-full flex flex-row">
                 <button
                   className="bg-green-600 w-full hover:bg-green-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"

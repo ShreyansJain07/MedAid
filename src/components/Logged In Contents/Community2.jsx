@@ -93,7 +93,7 @@ function Community2() {
                 Duration: 5 hours <br />
                 Required: At least 2 years of experience in medical field.
               </div>
-              <button className="m-4 bg-green-600 p-2.5 font-semibold rounded-xl shadow-xl">
+              <button className="m-4 text-white hover:bg-green-700 transition ease-in bg-green-600 p-2.5 font-semibold rounded-xl shadow-xl">
                 REGISTER
               </button>
             </div>
@@ -106,7 +106,7 @@ function Community2() {
                 Duration: 6 hours <br />
                 Required: At least 1 year of experience in medical field.
               </div>
-              <button className="m-4 bg-green-600 p-2.5 font-semibold rounded-xl shadow-xl">
+              <button className="m-4 text-white hover:bg-green-700 transition ease-in bg-green-600 p-2.5 font-semibold rounded-xl shadow-xl">
                 REGISTER
               </button>
             </div>
@@ -122,7 +122,7 @@ function Community2() {
                   Required: At least 5 years of experience in medical field.
                 </div>
                 <br />
-                <button className="m-4 bg-green-600 p-2.5 font-semibold rounded-xl shadow-xl">
+                <button className="m-4 text-white hover:bg-green-700 transition ease-in bg-green-600 p-2.5 font-semibold rounded-xl shadow-xl">
                 REGISTER
               </button>
               </div>
