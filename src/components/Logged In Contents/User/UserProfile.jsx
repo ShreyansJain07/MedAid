@@ -1,7 +1,27 @@
-import React from "react";
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import {
+  usernameContext,
+  passwordContext,
+} from "../../../Navigation/Navigation";
 
 const UserProfile = () => {
+  const { username, setUsername } = useContext(usernameContext);
+  const [medarray, setMedarray] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/donated?name=Krish`)
+      .then(function (response) {
+        console.log(response.data);
+        setMedarray(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div className="font-quicksand flex min-h-screen bg-gray-200">
       <div className="w-1/4 pl-3">
@@ -15,7 +35,7 @@ const UserProfile = () => {
             alt=""
           />
           <div className="text-center font-quicksand font-semibold text-xl">
-            {/* {username} */} username
+            {username || "User"}
           </div>
           <hr />
           <div>
@@ -64,8 +84,38 @@ const UserProfile = () => {
       </div>
       <div className="w-3/4 p-3">
         <div className="bg-white min-h-[187px] mb-3 p-3 rounded-xl">
-          <div className="font-semibold flex flex-row justify-between text-xl mb-1">
-            <div>Medicines donated till now</div>
+            <div className="font-semibold text-xl">Medicines donated till now</div>        
+          <div className="font-semibold text-xl mb-1">
+            <div className="">
+              {medarray.map((item1) => {
+                return (
+                  <div className="flex flex-row drop-shadow-xl text-left border-2 p-4 m-4">
+                    <div className="w-4/12 px-2">
+                      <div className="text-xs">Medicine name</div>
+                      <div className="font-semibold text-left">
+                        {item1.drugName}
+                      </div>
+                    </div>
+                    <div className="w-1/12 px-2">
+                      <div className="text-xs">Qty</div>
+                      <div className="font-semibold text-left">{item1.qty}</div>
+                    </div>
+                    <div className="w-2/12 px-2">
+                      <div className="text-xs">Type</div>
+                      <div className="font-semibold text-left">
+                        {item1.qtySelected}
+                      </div>
+                    </div>
+                    <div className="w-8/12 px-2">
+                      <div className="text-xs">Medicine info</div>
+                      <div className="font-semibold text-left">
+                        {item1.highlight}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           {/* <Task currentCoins={currentCoins} setCurrentCoins={setCurrentCoins} /> */}
         </div>
