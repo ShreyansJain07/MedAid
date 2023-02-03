@@ -98,11 +98,11 @@ const Navigation = () => {
     },
   ];
   const [med, setMed] = useState(med1);
-  const [selectedDrug,setSelectedDrug] = useState("")
-  const [qty,setQty] = useState("")
-  const [ph,setPh] = useState("")
-  const [dAdd,setDAdd] = useState("")
-  const [rAdd,setRAdd]  = useState("");
+  const [selectedDrug, setSelectedDrug] = useState("");
+  const [qty, setQty] = useState("");
+  const [ph, setPh] = useState("");
+  const [dAdd, setDAdd] = useState("");
+  const [rAdd, setRAdd] = useState("");
 
   return (
     <div>
@@ -122,7 +122,14 @@ const Navigation = () => {
                   <Route
                     exact
                     path="/donate"
-                    element={<Donate dAdd={dAdd} setDAdd={setDAdd} med={med} setMed={setMed} />}
+                    element={
+                      <Donate
+                        dAdd={dAdd}
+                        setDAdd={setDAdd}
+                        med={med}
+                        setMed={setMed}
+                      />
+                    }
                   />
                   <Route exact path="/volunteer" element={<Volunteer />} />
                   <Route
@@ -130,11 +137,7 @@ const Navigation = () => {
                     path="/ngo"
                     element={<NGO med={med} setMed={setMed} />}
                   />
-                  <Route
-                    exact
-                    path="/ocr"
-                    element={<OCR />}
-                  />
+                  <Route exact path="/ocr" element={<OCR />} />
                   <Route
                     exact
                     path="/requestmedicine"
@@ -143,16 +146,46 @@ const Navigation = () => {
                   <Route
                     exact
                     path="/addmedicine"
-                    element={<AddMedicine qty={qty} setQty={setQty} med={med} setMed={setMed} selectedDrug={selectedDrug} setSelectedDrug={setSelectedDrug} />}
+                    element={
+                      <AddMedicine
+                        qty={qty}
+                        setQty={setQty}
+                        med={med}
+                        setMed={setMed}
+                        selectedDrug={selectedDrug}
+                        setSelectedDrug={setSelectedDrug}
+                      />
+                    }
                   />
                   <Route exact path="/userprofile" element={<UserProfile />} />
                   <Route
                     exact
                     path="/volunteerdashboard"
-                    element={<VolunteerDashboard selectedDrug={selectedDrug} qty={qty} ph={ph} dAdd={dAdd} rAdd={rAdd} />}
+                    element={
+                      <VolunteerDashboard
+                        selectedDrug={selectedDrug}
+                        qty={qty}
+                        ph={ph}
+                        dAdd={dAdd}
+                        rAdd={rAdd}
+                      />
+                    }
                   />
                   <Route exact path="/adminhome" element={<AdminHome />} />
-                  <Route exact path="/ngologin" element={<NgoLogin ph={ph} setPh={setPh} rAdd={rAdd} setRAdd={setRAdd} selectedDrug={selectedDrug} setSelectedDrug={setSelectedDrug} />} />
+                  <Route
+                    exact
+                    path="/ngologin"
+                    element={
+                      <NgoLogin
+                        ph={ph}
+                        setPh={setPh}
+                        rAdd={rAdd}
+                        setRAdd={setRAdd}
+                        selectedDrug={selectedDrug}
+                        setSelectedDrug={setSelectedDrug}
+                      />
+                    }
+                  />
                 </Routes>
               </div>
               {/* </div> */}
