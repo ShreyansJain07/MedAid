@@ -152,7 +152,7 @@ const Navigation = () => {
                     element={<VolunteerDashboard selectedDrug={selectedDrug} qty={qty} ph={ph} dAdd={dAdd} rAdd={rAdd} />}
                   />
                   <Route exact path="/adminhome" element={<AdminHome />} />
-                  <Route exact path="/ngologin" element={<NgoLogin ph={ph} setPh={setPh} rAdd={rAdd} setRAdd={setRAdd} selectedDrug={selectedDrug} setSelectedDrug={setSelectedDrug} />} />
+                  <Route exact path="/ngologin" element={<NgoLogin qty={qty} ph={ph} setPh={setPh} rAdd={rAdd} setRAdd={setRAdd} selectedDrug={selectedDrug} setSelectedDrug={setSelectedDrug} />} />
                 </Routes>
               </div>
               {/* </div> */}
