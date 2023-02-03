@@ -19,10 +19,25 @@ const OCR = ({ drugName }) => {
 
   return (
     <div>
-      <input type="file" onChange={handleFileUpload} />
-      {progressRate != 1 && <p>Progress: {Math.ceil(progressRate.progress * 100)}%</p>}
+      <input
+        className="w-fit ml-20 my-2"
+        type="file"
+        onChange={handleFileUpload}
+      />
+      {progressRate != 1 && (
+        <p>Progress: {Math.ceil(progressRate.progress * 100)}%</p>
+      )}
       {/* <p>{text}</p> */}
-      {Math.ceil(progressRate.progress * 100) === 100 && text.toLowerCase().includes(drugName.toLowerCase()) ? <span className="text-green-600">Your medicine is accepted</span> : <span className="text-red-600">The medicine is not matching with current selection</span>}
+      {Math.ceil(progressRate.progress * 100) === 100 &&
+      text.toLowerCase().includes(drugName.toLowerCase()) ? (
+        <div className="mt-3 font-bold text-green-600">
+          Your medicine is accepted
+        </div>
+      ) : (
+        <div className="mt-3 font-bold text-red-600">
+          The medicine is not matching with current selection
+        </div>
+      )}
     </div>
   );
 };

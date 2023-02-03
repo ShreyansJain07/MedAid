@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
-const port = 5000;
+const port = 5002;
 
 const app = express();
 app.use(express.json());
@@ -47,19 +47,5 @@ app.post("/volunteer", (req, res) => {
       res.status(400).send("Item was not saved to the database");
     });
 });
-
-// app.post("/login", (req, res) => {
-//   var username = req.body.username;
-//   var password = req.body.password;
-
-//   Log.find({username: `${username}`}, {password: `${password}`}, (err, docs)=>{
-//     if(docs.length == 0){
-//         res.status(400).send('Invalid credentials')
-//     }
-//     else{
-//         res.send("true");
-//     }
-//   });  
-// })
 
 app.listen(port, () => console.log("Connected to port " + port));

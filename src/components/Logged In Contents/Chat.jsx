@@ -27,7 +27,7 @@ function Chat({ socket, username, room }) {
   useEffect(() => {
     if (messageList) {
       axios
-        .post(`http://localhost:3001/community2`, {
+        .post(`http://localhost:5003/community2`, {
           message: messageList[messageList.length - 1],
         })
         .catch((error) => {

@@ -9,17 +9,18 @@ const VolunteerDashboard = () => {
       phone: "9999887676",
       dAddress: "Good morning this is an adress",
       rAddress: "Good morning this is a receiver adress",
-    }
+    },
   ]);
-  useEffect(()=>{
-    axios.get('http://localhost:5000/delivery')
-    .then(function (response) {
-      setData(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  },[])
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/delivery")
+      .then(function (response) {
+        setData(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
   return (
     <div className="min-h-screen">
       <div className="text-4xl text-green-600 my-10 font-semibold">

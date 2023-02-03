@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
-const port = 5000;
+const port = 5001;
 
 const app = express();
 app.use(express.json());

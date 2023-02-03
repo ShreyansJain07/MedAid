@@ -72,6 +72,6 @@ app.post('/community2', (req, res) => {
 });
 
 
-server.listen(3001, () => {
+server.listen(5003, () => {
   console.log("SERVER RUNNING");
 });

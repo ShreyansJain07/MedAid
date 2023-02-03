@@ -50,9 +50,10 @@ const LoginForm = () => {
   const [err, seterr] = useState();
 
   useEffect(() => {
+    localStorage.setItem("userName", username);
     if (username && password)
       axios
-        .post("http://localhost:5000/login", {
+        .post("http://localhost:5001/login", {
           username: username,
           password: password,
         })
@@ -155,7 +156,9 @@ const LoginForm = () => {
       <div className="py-10 min-h-screen bg-green-400">
         <header className="max-w-lg mx-auto">
           <a href="#">
-            <h1 className="text-4xl font-bold text-white text-center">MedAid</h1>
+            <h1 className="text-4xl font-bold text-white text-center">
+              MedAid
+            </h1>
           </a>
         </header>
 
@@ -244,7 +247,7 @@ const LoginForm = () => {
         <div className="max-w-lg mx-auto text-center mt-12 mb-6">
           <p className="text-white">
             Don't have an account?
-            <NavLink to='/signup' className="ml-2 font-bold hover:underline">
+            <NavLink to="/signup" className="ml-2 font-bold hover:underline">
               Sign up
             </NavLink>
             .

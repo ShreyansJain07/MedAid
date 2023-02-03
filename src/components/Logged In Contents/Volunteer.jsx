@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import VolunteerDashboard from "./VolunteerDashboard";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 const Volunteer = () => {
   const [isVol, setIsVol] = useState(false);
@@ -17,25 +18,35 @@ const Volunteer = () => {
   useEffect(() => {
     if (name && email && phone && address) {
       console.log(name, email);
-      axios.post("http://localhost:5000/volunteer", {
-        name: name,
-        email: email,
-        phone: phone,
-        address: address,
-      })
-      .then(async (response) => {
-        console.log('then');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      axios
+        .post("http://localhost:5002/volunteer", {
+          name: name,
+          email: email,
+          phone: phone,
+          address: address,
+        })
+        .then(async (response) => {
+          console.log("then");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   }, [clicked]);
   return (
     <>
       {!isVol ? (
         <div className="flex ">
-          <div className="md:w-1/2 px-16 py-8">
+          <motion.div
+            initial={{ x: "-100%", opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              ease: "easeOut",
+            }}
+            className="md:w-1/2 px-16 py-8"
+          >
             <h1 className="text-3xl text-green-600 font-bold mb-4">
               Volunteer Details
             </h1>
@@ -102,7 +113,7 @@ const Volunteer = () => {
                 </button>
               </form>
             </div>
-          </div>
+          </motion.div>
           <div className="md:w-1/2">
             <img
               src="https://img.freepik.com/free-vector/people-volunteering-donating-money_53876-66111.jpg?w=2000"

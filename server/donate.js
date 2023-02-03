@@ -76,7 +76,6 @@ app.get("/medicine", (req, res)=>{
     }
     );
 })
-
 app.post("/donate", (req, res) => {
     req.body.snippet = snippet;
     req.body.highlight = highlight;
@@ -84,7 +83,7 @@ app.post("/donate", (req, res) => {
     date = date.replace(/-/g, "/")
     date = date.split("/").reverse().join("/")
     req.body.exp = date
-    
+    console.log('yoop');
     var myData = new Medicine(req.body);
     console.log(myData);
     myData
