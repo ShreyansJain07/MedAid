@@ -1,5 +1,6 @@
 import io from "socket.io-client";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Chat from "./Chat";
 
 const socket = io.connect("http://localhost:3001");
@@ -21,14 +22,32 @@ function Community2() {
     <div className="App">
       {!showChat ? (
         <div className="joinChatContainer flex flex-row min-h-[90vh]">
-          <div className="w-1/2">
+          <motion.div
+            initial={{ x: "-100%", opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              ease: "easeOut",
+            }}
+            className="w-1/2"
+          >
             <img
               src="https://img.freepik.com/free-vector/community-concept-illustration_114360-1021.jpg?w=2000"
               alt=""
               className="max-h-[90vh] mx-auto"
             />
-          </div>
-          <div className="w-1/2">
+          </motion.div>
+          <motion.div
+            initial={{ x: "100%", opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.3,
+              ease: "easeOut",
+            }}
+            className="w-1/2"
+          >
             <h3 className="text-green-600 font-semibold my-12">
               Join A Community
             </h3>
@@ -78,7 +97,7 @@ function Community2() {
                 Join room 3
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />
