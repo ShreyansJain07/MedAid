@@ -56,24 +56,6 @@ const NGO = ({ med, setMed }) => {
           >
             NGO 2
           </div>
-          <div
-            onClick={() => setCurrent("NGO 3")}
-            // className="my-4 cursor-pointer w-full transition ease-in hover:bg-green-400 font-semibold rounded-lg border-2 border-green-600 py-2 px-6"
-            className={`${
-              current == "NGO 3" ? "bg-green-400" : ""
-            } cursor-pointer w-full transition ease-in my-4 hover:bg-green-400 font-semibold rounded-lg border-2 border-green-600 py-2 px-6`}
-          >
-            NGO 3
-          </div>
-          <div
-            onClick={() => setCurrent("NGO 4")}
-            // className="my-4 cursor-pointer w-full transition ease-in hover:bg-green-400 font-semibold rounded-lg border-2 border-green-600 py-2 px-6"
-            className={`${
-              current == "NGO 4" ? "bg-green-400" : ""
-            } cursor-pointer w-full transition ease-in my-4 hover:bg-green-400 font-semibold rounded-lg border-2 border-green-600 py-2 px-6`}
-          >
-            NGO 4
-          </div>
         </div>
         <div className=" border-l-2 min-h-[60vh] w-full p-5">
           <div className="w-full font-semibold rounded-lg border-2 border-green-600 py-2 px-6">
