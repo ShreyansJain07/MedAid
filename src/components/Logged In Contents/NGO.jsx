@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const NGO = ({ med, setMed }) => {
   const [current, setCurrent] = useState("NGO 1");
-  const [reqMed,setReqMed] = useState();
+  const [reqMed, setReqMed] = useState();
 
   useEffect(() => {
     axios
@@ -69,8 +69,22 @@ const NGO = ({ med, setMed }) => {
             <div className="cursor-pointer text-sm font-semibold hover:bg-green-600 w-full bg-green-500 text-white py-2 rounded-md mx-1">
               Currently Available
             </div>
-            <div className="cursor-pointer text-sm font-semibold hover:bg-green-600 w-full bg-green-500 text-white py-2 rounded-md mx-1">
-              Required
+            <div className="w-full mr-2">
+              <div className="cursor-pointer text-sm font-semibold hover:bg-green-600 w-full bg-green-500 text-white py-2 rounded-md mx-1">
+                Required
+              </div>
+              <div>
+                {reqMed &&
+                  reqMed.map((item) => {
+                    return (
+                      <div className="flex flex-row space-x-2 border-2 border-green-600 rounded-md my-3 p-2">
+                        <div>{item.reqMed}</div>
+                        <div>{item.phone}</div>
+                        <div>{item.name}</div>
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
             <div className="cursor-pointer text-sm font-semibold hover:bg-green-600 w-full bg-green-500 text-white py-2 rounded-md mx-1">
               Delivery Request

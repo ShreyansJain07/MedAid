@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 
-const VolunteerDashboard = ({selectedDrug,qty,ph,rAdd,dAdd}) => {
+const VolunteerDashboard = ({ selectedDrug, qty, ph, rAdd, dAdd }) => {
+  console.log(selectedDrug);
   const [data, setData] = useState([
-    {
-      drugName: selectedDrug,
-      qty:qty,
-      phone: ph,
-      dAddress: dAdd,
-      rAddress: rAdd,
-    },
     {
       drugName: "Dolo2000",
       qty: "3",
       phone: "9999887676",
       dAddress: "Good morning this is an adress",
       rAddress: "Good morning this is a receiver adress",
+    },
+    {
+      drugName: selectedDrug,
+      qty: qty,
+      phone: ph,
+      dAddress: dAdd,
+      rAddress: rAdd,
     },
   ]);
   return (
