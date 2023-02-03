@@ -54,7 +54,7 @@ const UserProfile = () => {
           </div>
           <div>
             <div className="font-semibold font-quicksand mx-auto w-fit my-7 flex">
-              Your ZenCoins:
+              Your MedCoins:
               <div className="flex ml-3">
                 {/* {currentCoins} */} 1000
                 <svg
@@ -75,10 +75,10 @@ const UserProfile = () => {
             </div>
             <div className="flex justify-center">
               <NavLink
-                to="/activities"
+                to="/donate"
                 className="bg-green-600 text-white hover:bg-green-700 font-quicksand transition ease-in rounded-xl font-semibold py-3 px-6"
               >
-                Earn more ZenCoins
+                Earn more MedCoins
               </NavLink>
             </div>
           </div>
