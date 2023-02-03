@@ -19,6 +19,20 @@ const NGO = ({ med, setMed }) => {
   const [curr, setCurr] = useState(true);
   // const [first, setfirst] = useState(second)
 
+  const [currarray, setCurrarray] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/getmedicine`)
+      .then(function (response) {
+        console.log(response.data);
+        setCurrarray(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <div className="bg-gray-200 p-5">
       <div className="bg-white flex rounded-xl flex-row">
@@ -66,8 +80,22 @@ const NGO = ({ med, setMed }) => {
             {current}
           </div>
           <div className="flex flex-row my-5">
-            <div className="cursor-pointer text-sm font-semibold hover:bg-green-600 w-full bg-green-500 text-white py-2 rounded-md mx-1">
-              Currently Available
+            <div className="w-full mr-2">
+              <div className="cursor-pointer text-sm font-semibold hover:bg-green-600 w-full bg-green-500 text-white py-2 rounded-md mx-1">
+                Currently Available
+              </div>
+              <div>
+                {currarray &&
+                  currarray.map((item) => {
+                    return (
+                      <div className="flex flex-row space-x-2 border-2 border-green-600 rounded-md my-3 p-2">
+                        <div>{item.drugName}</div>
+                        <div>{item.qty}</div>
+                        <div>{item.exp}</div>
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
             <div className="w-full mr-2">
               <div className="cursor-pointer text-sm font-semibold hover:bg-green-600 w-full bg-green-500 text-white py-2 rounded-md mx-1">
