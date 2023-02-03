@@ -4,7 +4,7 @@ import { motion, useScroll } from "framer-motion";
 import OCR from "./User/OCR";
 import { useNavigate } from "react-router";
 
-const Donate = ({ med, setMed, dAdd, setDAdd }) => {
+const Donate = ({ med, setMed,dAdd,setDAdd }) => {
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -71,16 +71,7 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
       <div className="bg-gray-200">
         <div className="min-h-screen p-16">
           <div className="flex flex-row">
-            <motion.div
-              initial={{ x: "-100%", opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.3,
-                ease: "easeOut",
-              }}
-              className="bg-white h-fit p-5 rounded-3xl shadow-xl"
-            >
+            <div className="bg-white h-fit p-5 rounded-3xl shadow-xl">
               <div className="text-green-800 p-4 text-7xl font-semibold font-sans">
                 Ready to donate?
               </div>
@@ -157,7 +148,7 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
                   )}
                 </div>
               </div>
-            </motion.div>
+            </div>
             <div className="w-1/2 p-4">
               <img
                 src="http://sirum.org/wp-content/uploads/2022/07/globe-hand.png"
@@ -193,8 +184,8 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
               <input
                 value={address}
                 onChange={(e) => {
-                  setAddress(e.target.value);
-                  setDAdd(e.target.value);
+                  setAddress(e.target.value)
+                  setDAdd(e.target.value)
                 }}
                 type="text"
                 className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[40vw] h-[7vh] p-2.5 outline-none"
@@ -266,7 +257,7 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
                     placeholder="select from dropdown"
                   />
                   <button
-                    className="rounded-lg ml-2 hover:bg-gray-300 transition ease-in bg-gray-200 shadow h-[58px] w-[58px] p-2 text-gray-700"
+                    className="bg-white rounded-lg shadow h-[50px] p-2 text-gray-700"
                     onClick={() => setIsOpen(!isOpen)}
                   >
                     <svg
@@ -275,7 +266,7 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-6 h-6 mx-auto stroke-green-600"
+                      className="w-6 h-6 stroke-green-600"
                     >
                       <path
                         strokeLinecap="round"
@@ -338,17 +329,15 @@ const Donate = ({ med, setMed, dAdd, setDAdd }) => {
               <div className="mt-3 p-2.5 text-2xl">
                 Please upload an image for medicine verification
               </div>
-              <div className="">
-                <OCR drugName={drugName} />
-              </div>
+              <OCR drugName={drugName} />
             </div>
           </div>
           <button
             className="bg-green-600 mt-16 font-semibold rounded-xl hover:bg-green-700 transition ease-in text-white px-6 py-3"
             onClick={() => {
               setClicked(!clicked);
-              window.confirm("succes");
-              navigate("/userprofile");
+              window.confirm("success");
+              // navigate("/userprofile");
             }}
           >
             Submit
