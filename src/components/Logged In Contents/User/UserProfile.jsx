@@ -185,7 +185,7 @@ const UserProfile = () => {
             </div>
             <img
               className="object-contain mx-auto h-[120px] cursor-pointer"
-              src="https://media.istockphoto.com/id/1170195097/vector/doctor-and-nurse-presenting-new-drugs-illustration.jpg?s=612x612&w=0&k=20&c=pmLB0WW4hbKJR68axBanh6xwlWwZB_v9BumNjsFI1Bs="
+              src="https://img.freepik.com/free-vector/two-tiny-guys-masks-holding-giant-pills_74855-14191.jpg?size=626&ext=jpg&ga=GA1.2.1609566873.1675400200&semt=ais"
               alt=""
             />
           </NavLink>
