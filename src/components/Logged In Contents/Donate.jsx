@@ -4,7 +4,7 @@ import { motion, useScroll } from "framer-motion";
 import OCR from "./User/OCR";
 import { useNavigate } from "react-router";
 
-const Donate = ({ med, setMed,dAdd,setDAdd }) => {
+const Donate = ({ med, setMed, dAdd, setDAdd }) => {
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -184,8 +184,8 @@ const Donate = ({ med, setMed,dAdd,setDAdd }) => {
               <input
                 value={address}
                 onChange={(e) => {
-                  setAddress(e.target.value)
-                  setDAdd(e.target.value)
+                  setAddress(e.target.value);
+                  setDAdd(e.target.value);
                 }}
                 type="text"
                 className="bg-gray-200 border-4 border-white text-black-400 text-lg rounded-lg focus:border-green-400 block w-[40vw] h-[7vh] p-2.5 outline-none"
@@ -329,7 +329,9 @@ const Donate = ({ med, setMed,dAdd,setDAdd }) => {
               <div className="mt-3 p-2.5 text-2xl">
                 Please upload an image for medicine verification
               </div>
-              <OCR drugName={drugName} />
+              <div className="">
+                <OCR drugName={drugName} />
+              </div>
             </div>
           </div>
           <button
